@@ -4,30 +4,32 @@ import { Link} from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
+
+
+ 
   return (
 
     
-    <nav class="main-navigation">
-    <div class="navbar-header animated fadeInUp">
+    <nav className="main-navigation">
+    <div className="navbar-header animated fadeInUp">
     
-        <a class="navbar-brand" href="/#"><Link to="/" className="navbar-logo">
+        <a className="navbar-brand" href="/#"><Link to="/" className="navbar-logo">
                     <img src={Logo} alt="description "/>
                     </Link></a>
     </div>
-    <ul class="nav-list">
-        <li class="nav-list-item">
-            <a href="/#" class="nav-link">Acerda de</a>
+    <ul className="nav-list">
+        <li className="nav-list-item">
+            <a href="/#" className="nav-link">Acerda de</a>
         </li>
-        <li class="nav-list-item">
-            <a href="/#" class="nav-link">Cómo usar</a>
+        <li className="nav-list-item">
+            <a href="/#" className="nav-link">Cómo usar</a>
         </li>
-        <li class="nav-list-item">
-            <a href="/#" class="nav-link">resultados</a>
+        <li className="nav-list-item">
+            <a href="/#" className="nav-link">resultados</a>
         </li>
-        <li class="nav-list-item">
-            <a href="/#" class="nav-link">Patrocinadores</a>
+        <li className="nav-list-item">
+            <a href="/#" className="nav-link">Patrocinadores</a>
         </li>
-        
     </ul>
 
 </nav>

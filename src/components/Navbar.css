@@ -1,24 +1,39 @@
 body {
+    background-color:#e1dada;
     margin: 0;
     padding: 0;
+    overflow-y: scroll;
+overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
+
+
+nav {
+    background-color:#ffffff;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+header {
+
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
 a.navbar-brand {
     float: left;
     height: 50px;
     padding: 15px 15px;
-    font-size: 18px;
     line-height: 20px;
-    text-decoration: none;
-    color: orangered;
-    font-family: cursive;
-    font-weight: 700;
 
 }
 
-nav.main-navigation {
-    position: relative;
-}
+
 
 nav.main-navigation ul.nav-list {
     margin: 0;
@@ -26,6 +41,7 @@ nav.main-navigation ul.nav-list {
     list-style: none;
     position: relative;
     text-align: right;
+    margin-right: 30px;
 }
 
 .nav-list li.nav-list-item {
@@ -37,9 +53,9 @@ nav.main-navigation ul.nav-list {
 
 a.nav-link {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 22px;
     font-family: sans-serif;
-    font-weight: 500;
+    /* font-weight: 500; */
     cursor: pointer;
     position: relative;
     color: #000000;
@@ -131,3 +147,4 @@ a.nav-link {
     animation-name: fadeInUp;
     -webkit-animation-name: fadeInUp;
 }
+
