@@ -19,16 +19,16 @@ function Navbar() {
     </div>
     <ul className="nav-list">
         <li className="nav-list-item">
-            <a href="/#" className="nav-link">Acerda de</a>
+            <a href="#microred" className="nav-link">Acerda de</a>
         </li>
         <li className="nav-list-item">
-            <a href="/#" className="nav-link">Cómo usar</a>
+            <a href="#como_usar" className="nav-link">Cómo usar</a>
         </li>
         <li className="nav-list-item">
-            <a href="/#" className="nav-link">resultados</a>
+            <a href="#que_obtiene" className="nav-link">resultados</a>
         </li>
         <li className="nav-list-item">
-            <a href="/#" className="nav-link">Patrocinadores</a>
+            <a href="#patrocinadores" className="nav-link">Patrocinadores</a>
         </li>
     </ul>
 

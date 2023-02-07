@@ -6,10 +6,19 @@ import imagen3 from './img3.png';
 import cidet_logo from './logo-CIDET.png';
 import logo_gers from './logo-gers.jpg';
 import logo_colombia_inteligente from './logo_colombia_inteligente.png';
+import { Navigate } from "react-router-dom";
+import Login from './Login';
+
 
 
 function ContentApp() {
 
+const [goToLogin, setGoToLogin] = React.useState(false);
+
+
+if (goToLogin) {
+    return <Navigate to="/Login"></Navigate>;
+}
 
   return (
 <div className="  container">
@@ -26,7 +35,7 @@ function ContentApp() {
                         solución de microrred que garantiza
                         mayor confiabilidad del servicio de
                         energía al usuario final.</p>
-                        <button className="btn">CALCULA TU MICRORRED</button>
+                        <button onClick={() =>{ setGoToLogin(true)}} className="btn">CALCULA TU MICRORRED</button>
                     </div>
                 </div>
         <div>
@@ -52,7 +61,7 @@ function ContentApp() {
         </div>
     </div>
 
-    <div className="que_obtiene">
+    <div id="que_obtiene" className="que_obtiene">
         <div className="boton_center"><h1>¿Qué se obtiene?</h1>
             Microrred 360 está en la capacidad de
             suministrar los tamaños (potencia) y los tipos
@@ -66,7 +75,7 @@ function ContentApp() {
             <button className="btn" >CALCULA TU MICRORRED</button>
         </div>
         <div>
-         <img src={imagen2} className="imagenes img_shadown" width="600" height="400" alt="vg"></img>
+         <img src={imagen3} className="imagenes img_shadown" width="600" height="400" alt="vg"></img>
          </div> 
     </div>
 
