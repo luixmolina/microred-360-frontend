@@ -25,7 +25,7 @@ function Navbar() {
             <a href="#como_usar" className="nav-link">Cómo usar</a>
         </li>
         <li className="nav-list-item">
-            <a href="#que_obtiene" className="nav-link">resultados</a>
+            <a href="#que_obtiene" className="nav-link">Resultados</a>
         </li>
         <li className="nav-list-item">
             <a href="#patrocinadores" className="nav-link">Patrocinadores</a>

@@ -75,7 +75,7 @@ if (goToLogin) {
             <button className="btn" >CALCULA TU MICRORRED</button>
         </div>
         <div>
-         <img src={imagen3} className="imagenes img_shadown" width="600" height="400" alt="vg"></img>
+         <img src={imagen3} className="imagenes img_shadown" width="550" height="400" alt="vg"></img>
          </div> 
     </div>
 

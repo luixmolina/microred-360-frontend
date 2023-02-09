@@ -3,7 +3,7 @@
 .microred {
     height: 500px;
     font-size: 22px;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     padding: 40px;
     text-align: justify;
     
@@ -30,7 +30,7 @@ padding: 50px;
 
 .btn{
     width: 275px;
-   font-family: Roboto, sans-serif;
+   font-family:  'Montserrat', sans-serif;
    font-weight: 80;
    font-size: 20px;
    text-align: center;
@@ -76,7 +76,7 @@ p.parrafo_microred {
 
 .como_usar {height: 500px;
     font-size: 22px;
-    font-family: sans-serif;
+    font-family:  'Montserrat', sans-serif;
     text-align: justify;
     text-justify: inter-word;
     padding: 40px;
@@ -91,7 +91,7 @@ p.parrafo_microred {
 
 .que_obtiene {height: 500px;
     font-size: 22px;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-align: justify;
     text-justify: inter-word;
     padding: 40px;
@@ -107,7 +107,7 @@ p.parrafo_microred {
 .patrocinadores {
     height: 500px;
     font-size: 22px;
-    font-family: sans-serif;
+    font-family:  'Montserrat', sans-serif;
     padding: 40px;
     margin-top: 15px;
     background-color:#ffffff;
@@ -159,7 +159,7 @@ h4{
 .footer { 
     margin-top: 15px;
     font-size: 17px;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #2131c2;
     display: grid;
     grid-template-columns: 33% 33% 33%;
@@ -189,7 +189,8 @@ h4{
 
   @media(max-width: 500px) {
     .btn {
-        font-family: Roboto, sans-serif;
+        font-family:  'Montserrat', sans-serif;
+        
    font-weight: 80;
    font-size: 15px;
    text-align: center;

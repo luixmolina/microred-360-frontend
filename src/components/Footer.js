@@ -27,9 +27,9 @@ function Footer() {
 <div className="redes">
     <h4 className="titulo_redes">Nuestras redes sociales:</h4>
     <div className="redes_sociales">
-    <div> <img src={twiter_logo} alt=""  width="30" height="30"></img></div>
-    <div> <img src={Logo_linkedin} alt=""  width="33" height="33"></img></div>
-    <div> <img src={facebook_logo} alt=""  width="27" height="27"></img></div>
+    <div><a href={"https://twitter.com/gers_sa"}> <img src={twiter_logo} alt=""  width="30" height="30"></img></a></div>
+    <div><a href={"https://www.linkedin.com/company/gers-s-a"}> <img src={Logo_linkedin} alt=""  width="33" height="33"></img></a></div>
+    <div> <a href={"https://www.facebook.com/gerscolombia/"}><img src={facebook_logo} alt=""  width="27" height="27"></img></a></div>
     </div>
 </div>
 
