@@ -38,7 +38,7 @@ if (goToLogin) {
                         <button onClick={() =>{ setGoToLogin(true)}} className="btn">CALCULA TU MICRORRED</button>
                     </div>
                 </div>
-        <div>
+        <div className='imagen_microrred'>
         <img src={imagen1} className="imagenes img_shadown" width="520" height="340"alt=""></img>
     </div>
     </div>
@@ -46,10 +46,10 @@ if (goToLogin) {
 
 
     <div id="como_usar" className="como_usar">
-            <div>
-             <img src={imagen2} className="imagenes img_shadown" alt="" width="500" height="300"></img>
+            <div className="como_usar_imagen">
+             <img src={imagen2} className="imagenes " alt="" width="500" height="300"></img>
             </div>
-        <div className=""> <h1 >&iquest;C&oacute;mo usar?</h1>
+        <div className="texto_como_usar"> <h1 >&iquest;C&oacute;mo usar?</h1>
             <p><span >Para conocer los resultados que entrega la herramienta Microrred 360, es necesario:</span></p>
             <p><span > 1. Seleccionar en el mapa interactivo el punto geogr&aacute;fico para el cual se desea ejecutar el an&aacute;lisis.</span></p>
             <p><span > 2. Seleccionar el estrato socioecon&oacute;mico para el cual se desea ejecutar el an&aacute;lisis. </span></p>
@@ -70,12 +70,12 @@ if (goToLogin) {
             usuarios podrán obtener los costos de los
             activos y el ahorro previsto al implementar la
             alternativa de microrred, entre otros
-            resultados técnicos, económicos У
+            resultados técnicos, económicos y
             ambientales.<br></br><br></br><br></br>
             <button className="btn" >CALCULA TU MICRORRED</button>
         </div>
         <div>
-         <img src={imagen3} className="imagenes img_shadown" width="550" height="400" alt="vg"></img>
+         <img src={imagen3} className="imagenes " width="550" height="350" alt="vg"></img>
          </div> 
     </div>
 

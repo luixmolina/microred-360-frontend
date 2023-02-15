@@ -2,6 +2,8 @@ import React from 'react';
 import Logo from './logo_1981png.png'
 import { Link} from 'react-router-dom';
 import './Navbar.css';
+import MobileNavigation from './MobileNavigation';
+import NormalNavigation from './NormalNavigation';
 
 function Navbar() {
 
@@ -17,20 +19,9 @@ function Navbar() {
                     <img src={Logo} alt="description "/>
                     </Link></a>
     </div>
-    <ul className="nav-list">
-        <li className="nav-list-item">
-            <a href="#microred" className="nav-link">Acerda de</a>
-        </li>
-        <li className="nav-list-item">
-            <a href="#como_usar" className="nav-link">Cómo usar</a>
-        </li>
-        <li className="nav-list-item">
-            <a href="#que_obtiene" className="nav-link">Resultados</a>
-        </li>
-        <li className="nav-list-item">
-            <a href="#patrocinadores" className="nav-link">Patrocinadores</a>
-        </li>
-    </ul>
+    <NormalNavigation />
+    <MobileNavigation />
+    
 
 </nav>
 
