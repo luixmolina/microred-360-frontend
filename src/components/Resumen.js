@@ -38,9 +38,9 @@ const Resumen = (props) => {
                     <span>Ahorro económico [$/año]:</span>
                     <br></br>
                     <div className="caja_resultados">
-                        <span> {props.economic_saving} </span>
+                        <span> ${props.economic_saving} </span>
                     </div> <br></br>
-                 <span>Emisiones de CO2 ahorradas [kg/año]:</span>
+                 <span>Ahorro ambiental [kg/año]:</span>
                     <br></br>
                     <div className="caja_resultados">
                         <span> {props.environmental_saving} </span>
@@ -55,22 +55,22 @@ const Resumen = (props) => {
             </div>
             <div className="caja_datos">
               <div  className="caja_respuesta">
-                <span>Arreglo fotovoltaico [kW]:</span>
+                <span>Capacidad del arreglo PV [kW]:</span>
                 <br></br>
                 <div className="caja_resultados">
                     <span>{props.pv_power} </span>
                 </div> <br></br>
-                <span>Tecnología de inversor:</span>
+                <span>Tecnología del inversor:</span>
                 <br></br>
                 <div className="caja_resultados">
                     <span>{props.inverter_type}</span>
                 </div> <br></br>
-                <span>Inversor cargador [kW]:</span>
+                <span>Capacidad del inversor cargador [kW]:</span>
                 <br></br>
                 <div className="caja_resultados">
                     <span>{props.charger_inverter_power}</span>
                 </div> <br></br>
-                <span>Banco de baterías [kWh]:</span>
+                <span>Capacidad del banco de baterías [kWh]:</span>
                 <br></br>
                 <div className="caja_resultados">
                     <span>{props.battery_bank_power}</span>

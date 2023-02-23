@@ -1,0 +1,35 @@
+
+
+.tarjeta_graficos{
+
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.container_graficos {
+
+    width: 900px;
+    margin-top: 30px;
+      background-color: #fff;
+}
+
+.container_graficos2 {
+    padding-top: 50px;
+    display: flex;
+    width: 900px;
+    margin: auto;
+    background-color: #fff;
+}
+
+.encabezado_graficos {
+    background-color:#4f7df2;
+    color: #ffffff;
+    margin-bottom: -21px;
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px ;
+    width: 1262px;
+}

@@ -8,7 +8,8 @@ import logo_gers from './logo-gers.jpg';
 import logo_colombia_inteligente from './logo_colombia_inteligente.png';
 import { Navigate } from "react-router-dom";
 import Login from './Login';
-
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 
 function ContentApp() {
@@ -21,7 +22,10 @@ if (goToLogin) {
 }
 
   return (
+      <>
+      <Navbar />
 <div className="  container">
+
     <div id="microred" className="microred">
         <div className="flex-container">
 
@@ -94,6 +98,8 @@ if (goToLogin) {
         </div>
     </div>
     </div>
+    <Footer />
+    </>
   )
 }
 

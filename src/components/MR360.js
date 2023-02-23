@@ -1,12 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import Resumen  from "./Resumen";
 import Detallados  from "./Detallados";
+import { useLocation } from 'react-router-dom';
+import NavbarInside from './NavbarInside';
+import Footer from './Footer';
+import Cargando from './Cargando';
+import PerfilTensiones from './perfil_tensiones';
+import Graficos from './Graficos';
+
 function MR360() {
 
     const [backendData, setBackendData] = useState(undefined)
 
-
-
+    let { state } = useLocation();
+    console.log(state.datos);
     // useEffect(() => {
     //     fetch("http://localhost:5000/obtenerCalculoMr360").then(response => {
     //         if (!response.ok) {
@@ -25,7 +32,11 @@ function MR360() {
 
 
     useEffect(() => {
-        fetch("http://localhost:5000/obtenerCalculoMr360").then(
+        fetch("http://localhost:5000/obtenerCalculoMr360", {
+            method: "POST",
+            headers: {"Content-type": "application/json;charset=UTF-8"},
+            body: JSON.stringify(state.datos)
+        }).then(
             response => response.json()
         ).then(
             data => {
@@ -39,10 +50,11 @@ function MR360() {
             {
                 ( backendData === undefined) ? (
                     <div className="  container_resultados">
-                <p>Cargando...</p>
+                    <Cargando />
                 </div>
                 ): (
-                    
+                    <>
+                    <NavbarInside />
                     <div className="  container_resultados">
                     <Resumen energy_saving={backendData[0].energy_saving} economic_saving={backendData[0].economic_saving} environmental_saving={backendData[0].environmental_saving} 
                     battery_bank_power={backendData[1].battery_bank_power} inverter_type={backendData[1].inverter_type} pv_power={backendData[1].pv_power}
@@ -60,6 +72,16 @@ function MR360() {
                      investment_cost={backendData[3].investment_cost}
                      exported_energy={backendData[3].exported_energy}></Detallados>
                     </div>
+                    
+                    <Graficos imported_energy_profile={backendData[4].imported_energy_profile}
+                      exported_energy_profile={backendData[4].exported_energy_profile}
+                      solar_profile={backendData[4].solar_profile}
+                      charge_battery_profile={backendData[4].charge_battery_profile}
+                      discharge_battery_profile={backendData[4].discharge_battery_profile}
+                      demand_profile={backendData[4].demand_profile}></Graficos>
+                    <PerfilTensiones />
+                    <Footer />
+                    </>
                  )}
 
         </div>

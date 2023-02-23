@@ -1,0 +1,23 @@
+
+nav {
+    background-color:#ffffff;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+header {
+
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+a.navbar-brand {
+    float: left;
+    height: 35px;
+    padding: 15px 15px;
+    line-height: 20px;
+
+}
+

@@ -1,0 +1,21 @@
+.map {
+    position:absolute; 
+    top:0; 
+    bottom:0; 
+    width:100%;
+    }
+    
+    body { 
+    margin:0; 
+    padding:0;
+    }
+
+
+    .form_mapa{
+        display: none;
+  opacity: 0;
+  pointer-events: none;
+  visibility: none;
+  z-index: -1;
+    }
+

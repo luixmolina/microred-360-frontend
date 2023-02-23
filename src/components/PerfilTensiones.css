@@ -1,0 +1,73 @@
+
+.tarjeta_neplan {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:10px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+
+}
+
+
+.encabezado_neplan {
+    background-color:#4f7df2;
+    color: #ffffff;
+
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px ;
+    width: 1262px;
+
+}
+
+
+.encabezado_neplan h1 {
+
+    margin-bottom: 0px;
+}
+.imagen_neplan {
+
+    margin-top:30px;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.btn_guardar{
+    width: 150px;
+    font-family: 'Montserrat', sans-serif;
+   font-weight: bold;
+   font-size: 20px;
+   text-align: center;
+   vertical-align: middle;
+   color: #fff;
+   background-color: #4f7df2;
+   padding: 10px ;
+   border: none;
+   box-shadow: rgb(61, 61, 61) 2px 4px 12px -3px;
+   border-radius: 14px;
+   transition : 1000ms;
+   cursor: pointer;
+
+   }
+   
+
+   .btn_calcular{
+    width: 240px;
+    margin-left: 30px;
+   }
+
+   .btn_guardar{
+    width: 230px;
+    margin-left: 30px;
+   }
+
+   .btn:hover{
+    transition : 1000ms;
+    background-color: #fff;
+    color: #0066cc;
+    
+    }

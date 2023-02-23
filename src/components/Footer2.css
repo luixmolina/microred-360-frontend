@@ -1,5 +1,5 @@
 
-.redes{
+.redes2{
 
     flex-direction: column ;
 }
@@ -8,21 +8,21 @@ h4{
     margin-bottom: 0;
 }
 
-.redes_sociales {
+.redes_sociales2 {
 
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.logo_gers {
+.logo_gers2 {
 
     margin-top: 15px;
 }
 
 
 
-.footer { 
+.footer2 { 
     
     margin-top: auto;
     font-size: 17px;
@@ -32,20 +32,20 @@ h4{
     grid-template-columns: 33% 33% 33%;
     text-align: center;
     justify-content:space-evenly;
- 
-    bottom: 0;
+    position: relative;
+    bottom: -750px;
     z-index: 5;
     background-color:#e1dada;
     width: 100%;
 }
 
-.flex-container-footer{
+.flex-container-footer2{
     display: flex;
     flex-direction: column;
 }
 
 @media(max-width: 768px) {
-    .footer {
+    .footer2 {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -54,7 +54,7 @@ h4{
 }
 
 @media(max-width: 500px) {
-    .logos_footer{
+    .logos_footer2{
       width: 50px;
     }
 }

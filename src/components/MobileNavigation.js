@@ -1,6 +1,6 @@
 import NavLinks  from "./NavLinks";
 import React from "react";
-import {SlMenu} from 'react-icons/all'
+import {SlMenu} from "react-icons/sl";
 import {CgCloseO} from 'react-icons/cg'
 import {useState} from 'react';
 const MobileNavigation = () => {

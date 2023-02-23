@@ -184,16 +184,6 @@ h4{
     margin-top: 15px;
 }
 
-.footer { 
-    margin-top: 15px;
-    font-size: 17px;
-    font-family: 'Montserrat', sans-serif;
-    color: #2131c2;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    text-align: center;
-    justify-content:space-evenly;
-}
 
 
 .img_shadown {
@@ -363,14 +353,6 @@ h4{
     }
 }
 
-@media(max-width: 768px) {
-    .footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-    }
-}
 
 @media(max-width: 500px) {
     nav {

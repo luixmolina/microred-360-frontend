@@ -1,6 +1,4 @@
-.container_resultados{
-    padding-top: 60px;
-}
+
 
 .tarjeta_principal {
     font-family: 'Montserrat', sans-serif;
@@ -82,7 +80,7 @@ h1{
 .caja_resultados{
     border-style: groove;
     border-color: #000000;
-    border-radius: 1px;
+    border-radius: 7px;
     padding-left: 8px;
 }
 
@@ -363,4 +361,8 @@ h1{
         width: 90%;
          height: auto;
     }
+}
+
+.kw_texto{
+    font-size: 18px;
 }
