@@ -13,7 +13,7 @@ function Detallados(props) {
         </div>
             <div className="contenedor_detallados" >
                 <div className="caja_respuesta_detallados_1">
-                  <span> Fecha de la falla:</span>
+                  <span>Fecha simulada de la interrupción del servicio de energia:</span>
                   <div className="caja_resultados">
                   Dia: {props.failure_day} - Mes: {props.failure_month} - Hora: {props.failure_hour}
                   </div><br></br>
@@ -34,7 +34,7 @@ function Detallados(props) {
                         {props.exported_energy} 
                     </div><br></br>
                 </div>
-                <div class="caja_respuesta_detallados">
+                <div className="caja_respuesta_detallados">
                   <span>Compra de energía a la red eléctrica principal [$/año]:</span>
                   <div className="caja_resultados">
                       ${props.energy_purchases}
@@ -56,6 +56,11 @@ function Detallados(props) {
                         ${props.investment_cost}
                     </div><br></br>
                 </div>
+            </div>
+            <div>
+                <span className='nota'>
+                Nota: La aplicacion web micored360 resuelve un problema de optimizacion para un año completo, a partir del cual determina los flujos de caja de 20 años asumiendo una tasa de descuento del 12% E.A.
+                </span>
             </div>
       </div>
   )

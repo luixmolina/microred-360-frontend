@@ -6,7 +6,7 @@ import './NavbarInside.css';
 
 const NavbarInside = () => {
     return ( 
-        <nav className="main-navigation">
+        <nav className="main-navigation2">
     <div className="navbar-header animated fadeInUp">
     
         <a className="navbar-brand" href="/#"><Link to="/" className="navbar-logo">

@@ -2,7 +2,7 @@
 
 .tarjeta_graficos{
 
-    background-color: #fff;
+    background-color: #c9e4ff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,3 +33,72 @@
     border-top-right-radius: 10px ;
     width: 1262px;
 }
+
+.nota2{
+ 
+    padding-left: 40px;
+    font-size: 14px;
+    background-color: #c9e4ff;
+    padding: 3px;
+
+}
+
+@media(max-width: 768px) {
+    .tarjeta_graficos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        
+        width:auto;
+    }
+
+    .encabezado_graficos{
+        width: 562px;
+    }
+  
+   .container_graficos{
+       width: 562px;
+   }
+
+   .container_graficos2{
+    width: 562px;
+  }
+
+  .encabezado_neplan{
+      width:562px;
+  }
+
+
+
+
+}
+  
+  @media(max-width: 500px) {
+    .container_cargando {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+      
+      width:auto;
+  }
+  
+  .encabezado_graficos{
+    width: 314px;
+}
+
+.container_graficos{
+   width: 314px;
+   height: auto;
+}
+
+.container_graficos2{
+width: 314px;
+}
+
+.encabezado_neplan{
+  width:314px;
+}
+  
+  }

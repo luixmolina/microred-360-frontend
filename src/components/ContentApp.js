@@ -60,7 +60,7 @@ if (goToLogin) {
             <p><span >3. Seleccionar el proveedor del servicio de suministro de energ&iacute;a.</span></p>
             <p><span > A partir de estos datos la herramienta calcula la alternativa de microrred m&aacute;s adecuada para el usuario.</span><span ></span></p>
             <div className="boton_center">
-                 <button className="btn" >CALCULA TU MICRORRED</button>
+                 <button className="btn" onClick={() =>{ setGoToLogin(true)}}  >CALCULA TU MICRORRED</button>
             </div>
         </div>
     </div>
@@ -76,7 +76,7 @@ if (goToLogin) {
             alternativa de microrred, entre otros
             resultados técnicos, económicos y
             ambientales.<br></br><br></br><br></br>
-            <button className="btn" >CALCULA TU MICRORRED</button>
+            <button className="btn" onClick={() =>{ setGoToLogin(true)}}>CALCULA TU MICRORRED</button>
         </div>
         <div>
          <img src={imagen3} className="imagenes " width="550" height="350" alt="vg"></img>

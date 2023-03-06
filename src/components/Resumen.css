@@ -226,7 +226,6 @@ h1{
 
 @media(max-width: 768px) {
 
-
     .tarjeta_principal {
         display: flex;
         flex-direction: column;
@@ -267,7 +266,7 @@ h1{
         height: auto;
         width: auto;
         align-items: center;
-        padding-bottom: 150px;
+        padding-bottom: 260px;
     }
 
      .encabezado_imagen{
@@ -311,7 +310,7 @@ h1{
         width: 80%;
         display: flex;
         flex-direction: column;
-        padding-bottom: 150px;
+        padding-bottom: 10px;
     }
 
     .caja_respuesta_detallados_1{
@@ -335,10 +334,9 @@ h1{
     .tarjeta_neplan {
 
         width: 90%;
-        display: grid;
-    
+        display: flex;
         padding-top: 0px;
-        padding-left: 50px;
+        padding-left: 30px;
     }
 
     .encabezado_neplan{
@@ -347,6 +345,7 @@ h1{
 
     .botones{
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         align-content: center;
         align-items: center;
@@ -365,4 +364,11 @@ h1{
 
 .kw_texto{
     font-size: 18px;
+}
+
+.nota{
+    margin-left: 40px;
+    font-size: 14px;
+    background-color: #c9e4ff;
+    padding: 3px;
 }

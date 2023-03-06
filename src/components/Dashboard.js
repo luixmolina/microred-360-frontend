@@ -1,19 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Dashboard.css';
 import NavbarInside from './NavbarInside';
 import Footer2 from './Footer2';
 
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+
 
 
 function Dashboard() {
 
     const [goToForm, setGoToForm] = React.useState(false);
+    
 
 
-if (goToForm) {
-    return <Navigate to="/Mapa"></Navigate>;
-}
+   
+    useEffect(() => {
+        const token = localStorage.getItem('token')
+        if(token){
+            // const user = jwt.decode(token)
+            // if(!user){
+            //     localStorage.removeItem('token')
+            //     Navigate.replace('/')
+            // } else {
+            //     populateQuote()
+            // }
+        }
+    })
+
+
+    if (goToForm) {
+        return <Navigate to="/Mapa"></Navigate>;
+    }
 
   return (
     <>

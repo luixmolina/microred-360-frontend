@@ -12,7 +12,7 @@ function Graficos(props) {
 const labels = [];
 
 for (let i = 0; i < 24; i++) {
-    labels.push(i);
+    labels.push(i+"h");
   }
 
 
@@ -20,7 +20,34 @@ for (let i = 0; i < 24; i++) {
     plugins: {
       title: {
         display: true,
-        text: 'Power [kW]',
+        text: ' Potencia [kW]',
+        position: 'left',
+      },
+    },
+    responsive: true,
+    interaction: {
+      mode: 'index',
+      intersect: false,
+    },
+    scales: {
+      x: {
+        stacked: true,
+      },
+      y: {
+        stacked: true,
+      },
+    },
+  };
+
+
+
+
+  const options2 = {
+    plugins: {
+      title: {
+        display: true,
+        text: 'Demanda [kW]',
+        position: 'left',
       },
     },
     responsive: true,
@@ -43,34 +70,32 @@ for (let i = 0; i < 24; i++) {
     datasets: [
       {
         id: 1,
-        label: 'imported energy profile',
+        label: 'Energia importada',
         data: props.imported_energy_profile,
         backgroundColor: 'rgb(255, 0, 0)',
-        stack: 'Stack 0',
+        stack: 'Stack 1',
+        barThickness: 10,
       },  {
         id: 2,
-        label: 'exported energy profile',
+        label: 'Energia exportada',
         data: props.exported_energy_profile,
         backgroundColor: 'rgb(204, 0, 153)',
-        stack: 'Stack 0',
-      },  {
+        stack: 'Stack 2',
+        barThickness: 10,
+      },   {
         id: 3,
-        label: 'charge battery profile',
-        data: props.charge_battery_profile,
-        backgroundColor: 'rgb(102, 153, 255)',
-        stack: 'Stack 0',
-      } ,  {
-        id: 4,
-        label: 'solar profile',
+        label: 'Generacion PV',
         data: props.solar_profile,
         backgroundColor: 'rgb(255, 255, 0)',
-        stack: 'Stack 0',
+        stack: 'Stack 4',
+        barThickness: 10,
       },  {
-        id: 5,
-        label: 'discharge battery profile',
+        id: 4,
+        label: 'Generacion BAT',
         data: props.discharge_battery_profile,
         backgroundColor: 'rgb(102, 255, 102)',
-        stack: 'Stack 0',
+        stack: 'Stack 5',
+        barThickness: 10,
       }
     ]
     });
@@ -80,10 +105,10 @@ for (let i = 0; i < 24; i++) {
     datasets: [
       {
         id: 1,
-        label: 'imported energy profile',
+        label: 'Demanda de energia',
         data: props.demand_profile,
         backgroundColor: 'rgb(0,0,255,255)',
-
+        barThickness: 10,
       }
     ]
     });
@@ -98,11 +123,14 @@ for (let i = 0; i < 24; i++) {
                Operación prevista de la microrred
             </h1>
         </div>
-    <div className="container_graficos">
+    <div className="container_graficos" >
    <Bar options={options} data={chartData}></Bar>
+   <div className="nota2">
+   Nota: A modo ilustrativo en el anterior grafico se presenta la operación prevista de la microred diseñada para el primer dia del horizonte de planificación.
+   </div>
    </div>
    <div className="container_graficos2">
-   <Bar options={options} data={chartData2}></Bar>
+   <Bar options={options2} data={chartData2}></Bar>
    </div>
    </div>
     </>

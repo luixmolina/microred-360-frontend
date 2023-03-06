@@ -14,26 +14,13 @@ function MR360() {
 
     let { state } = useLocation();
     console.log(state.datos);
-    // useEffect(() => {
-    //     fetch("http://localhost:5000/obtenerCalculoMr360").then(response => {
-    //         if (!response.ok) {
-    //           throw new Error(response.statusText)
-    //         }
-    //         return response.json()}).catch(err=>{
-    //             console.log(err)
-    //         }
-    //     ).then(
-    //         data => {
-    //             setBackendData(data)
-    //             console.log(data);
-    //         }
-    //     )
-    // }, [])
+
 
 
     useEffect(() => {
         fetch("http://localhost:5000/obtenerCalculoMr360", {
             method: "POST",
+            mode: 'cors',
             headers: {"Content-type": "application/json;charset=UTF-8"},
             body: JSON.stringify(state.datos)
         }).then(
@@ -79,7 +66,9 @@ function MR360() {
                       charge_battery_profile={backendData[4].charge_battery_profile}
                       discharge_battery_profile={backendData[4].discharge_battery_profile}
                       demand_profile={backendData[4].demand_profile}></Graficos>
-                    <PerfilTensiones />
+                    <PerfilTensiones voltage_profile={backendData[5].voltage_profile}/>
+
+
                     <Footer />
                     </>
                  )}

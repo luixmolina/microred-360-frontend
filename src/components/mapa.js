@@ -1,14 +1,12 @@
-import React from 'react';
+import React , {useEffect, useState} from 'react';
 import Map, {Marker} from 'react-map-gl';
-import {useState} from 'react';
+
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
 import './mapa.css';
 import pointer from './marker_image.png';
 import Form from './Form';
 import './Form.css';
-import NavbarInside from './NavbarInside';
-import Footer from './Footer';
 import { Link} from 'react-router-dom';
 
 import {IoMdCloseCircleOutline} from "react-icons/io";
@@ -23,31 +21,60 @@ function Mapa() {
     zoom: 4.5
   });
 
-
-
+ 
   const [hideLightbox, setHideLightbox] = useState(true);
+  const [ocultarCajaUsar, setocultarCajaUsar] = useState(false);
 
   const [settings, setsettings] = useState({
-    dragPan: true,
-    dragRotate: true,
-    scrollZoom: true,
-    touchZoom: true,
-    touchRotate: true,
-    keyboard: true,
+    dragPan: false,
+    dragRotate: false,
+    scrollZoom: false,
+    touchZoom: false,
+    touchRotate: false,
+    keyboard: false,
 
     doubleClickZoom: false
     });
 
-  const [lngLat, setlngLat] = useState([287,4]);
+  const [lngLat, setlngLat] = useState([-76.549480,3.398332]);
 
-//   Map.on('move', function (e) {
+//   Map.on('move', function (e) {, 
 //     console.log(`Current Map Center: ${Map.getCenter()}`);
 //     Marker.setLngLat(Map.getCenter());
 // });
 
+
+function handleTouch(evt)  {
+
+
+  var longitud = parseFloat(evt.lngLat.lng); 
+  var latitud = parseFloat(evt.lngLat.lat); 
+  
+  setlngLat([longitud,latitud]);
+  setHideLightbox(false)
+  
+  var newViewState ={
+   longitude: longitud-0.00040,
+   latitude: latitud,
+
+ }
+ setViewState(newViewState)
+
+ setsettings({dragPan: false,
+   dragRotate: false,
+   scrollZoom: false,
+   touchZoom: false,
+   touchRotate: false,
+   keyboard: true,
+   doubleClickZoom: false,})
+ }
+
+
+
+
   function handleClick(evt) {
 
-
+   if(ocultarCajaUsar === true) {
    var longitud = parseFloat(evt.lngLat.lng); 
    var latitud = parseFloat(evt.lngLat.lat); 
 
@@ -68,6 +95,31 @@ function Mapa() {
     touchRotate: false,
     keyboard: true,
     doubleClickZoom: false,})
+
+    var datosBackend = {
+      "lng": longitud,
+      "ltd": latitud,
+    };
+
+    console.log(JSON.stringify(datosBackend));
+   
+      fetch("http://10.0.2.216:5005/calculator_map", {
+          method: "POST",
+          headers: {"Content-type": "application/json;charset=UTF-8"},
+          body: JSON.stringify(datosBackend)
+          
+      }).then(
+          response => response.json()
+        
+      ).then(
+          data => {
+            setRadiacion(data[0].radiation_level);
+              console.log(data[0].radiation_level);
+          }
+      )
+ 
+
+    }
   }
 
   function moverMapa(evt) {
@@ -93,7 +145,16 @@ function ocultarFormulario(){
     touchZoom: true,
     touchRotate: true,
     keyboard: true,})
-  
+}
+
+function ocultarAceptar(){
+  setocultarCajaUsar(true)
+  setsettings({dragPan: true,
+    dragRotate: true,
+    scrollZoom: true,
+    touchZoom: true,
+    touchRotate: true,
+    keyboard: true,})
 }
 
   return (
@@ -104,9 +165,9 @@ function ocultarFormulario(){
     {...viewState}
     onMove={moverMapa}
     style={{width: '100vw', height: '100vh'}}
-    mapStyle="mapbox://styles/mapbox/streets-v9"
+    mapStyle="mapbox://styles/mapbox/outdoors-v12"
     mapboxAccessToken="pk.eyJ1IjoibHVpc21vbGluYTIiLCJhIjoiY2xkdGM1ZWwyMDR6NjNwbzlucnRyaG80dSJ9.-7bIdii__JEKxuIY0hROYA" 
-    onDblClick={handleClick} {...settings} >
+    onDblClick={handleClick} onTouchEnd={handleTouch} {...settings} >
 
     {/* <Marker longitude={-100} latitude={40} anchor="bottom" >
       <img src={pointer} alt="" />
@@ -130,19 +191,7 @@ function ocultarFormulario(){
             </div>
              <br></br>
              <div className="caja_formulario">
-             <form><span >Nivel de radiación solar:</span><br></br>
-                <select name="nivel_radiacion" id="nivel_radiacion" onChange={ev => setRadiacion(parseInt(ev.target.value))}>
-                <option value=""></option>
-                    <option value="1">Nivel de radiación solar [1.5 kWh - 2.0 kWh]</option>
-                    <option value="2">Nivel de radiación solar [2.0 kWh - 2.5 kWh]</option>
-                    <option value="3">Nivel de radiación solar [2.5 kWh - 3.0 kWh]</option>
-                    <option value="4">Nivel de radiación solar [3.0 kWh - 3.5 kWh]</option>
-                    <option value="5">Nivel de radiación solar [3.5 kWh - 4.0 kWh]</option>
-                    <option value="6">Nivel de radiación solar [4.0 kWh - 4.5 kWh]</option>
-                    <option value="7">Nivel de radiación solar [4.5 kWh - 5.0 kWh]</option>
-                    <option value="8">Nivel de radiación solar [5.0 kWh - 5.5 kWh]</option>
-                    <option value="9">Nivel de radiación solar [5.5 kWh - 6.0 kWh]</option>
-            </select><br></br><br></br>
+             <form>
                  <span>Estrato socioeconómico:</span><br></br>
                  <select name="estrato" id="estrato" onChange={ev => setEstrato(parseInt(ev.target.value))}>
                  <option value=""></option>
@@ -155,12 +204,13 @@ function ocultarFormulario(){
                   </select> <br></br><br></br>
                   <span>Proveedor del servicio de energia:</span><br></br>
                  <select name="proveedor" id="proveedor" onChange={ev => setProveedor(parseInt(ev.target.value))}>
-                    <option value="1"></option><option value="1">CELSIA</option>
-                    <option value="2">ENEL</option>
-                    <option value="3">AIR-E</option>
-                    <option value="4">EMCALI</option>
-                    <option value="5">EPM</option>
-                    <option value="6">Otro</option>
+                    <option value="1">CEO</option>
+                    <option value="2">CELSIA</option>
+                    <option value="3">ENEL</option>
+                    <option value="4">AIR-E</option>
+                    <option value="5">EMCALI</option>
+                    <option value="6">EPM</option>
+                    <option value="7">Otro</option>
                   </select>
              </form>
             </div>
@@ -172,6 +222,34 @@ function ocultarFormulario(){
     </div>
         </div>
      </div>
+
+     <div className={` ${ocultarCajaUsar ? "aceptar_hide" : ""}`}>
+     <div className="  container_usu">
+    <div className="imagen_usu"></div>
+
+    <div className="caja_usu">
+        <div className="encabezado_form">
+           <div className="titulo"> Microrred 360 </div> 
+         </div>
+         <div className="contenido_usu">
+             <div className="texto_usu">
+             1. Seleccione en el mapa interactivo dando doble click el punto geográfico para el cual se desea ejecutar el análisis.<br></br><br></br>
+
+            2. Seleccionar el estrato socioeconómico para el cual se desea ejecutar el análisis.<br></br><br></br>
+
+            3. Seleccionar el proveedor del servicio de suministro de energía.
+            </div>
+             <br></br>
+             
+             <div className="aceptar_usu">
+             <button className="btn_aceptar" onClick={ocultarAceptar}>ACEPTAR</button>
+        </div>
+
+    </div>
+    </div>
+        </div>
+     </div>
+   
     </div>
   )
 }

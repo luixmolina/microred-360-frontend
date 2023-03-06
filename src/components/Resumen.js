@@ -8,7 +8,7 @@ import hibrido from './hibrido.png';
 
 const Resumen = (props) => {
     var imagen;
-  if(props.inverter_type == "ongrid_and_charger_inverter"){
+  if(props.inverter_type == "Ongrid e inversor cargador"){
     imagen = inversor_cargador;
   } else{
     imagen = hibrido;

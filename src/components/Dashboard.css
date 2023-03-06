@@ -17,7 +17,7 @@
     background-repeat:no-repeat;
     background-size: 100%;
    height:800px;
-   width:1350px;
+   width:1500px;
    position: absolute;
     z-index: 1;
 
@@ -98,6 +98,20 @@
    }
 
    
+
+   @media(max-width: 768px) {
+    .tarjeta_graficos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width:auto;
+    }
+
+}
+
+
+
 @media(max-width: 500px) {
     .container_dashboard {
         
@@ -108,7 +122,7 @@
     .caja_bienvenida{
         width: 350px;
         margin-top: 0px;
-        left: 15%;
+        left: 50%;
     }
 
     .btn{

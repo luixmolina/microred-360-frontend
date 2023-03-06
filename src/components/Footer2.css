@@ -33,7 +33,7 @@ h4{
     text-align: center;
     justify-content:space-evenly;
     position: relative;
-    bottom: -750px;
+    bottom: 0px;
     z-index: 5;
     background-color:#e1dada;
     width: 100%;

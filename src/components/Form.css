@@ -19,7 +19,6 @@
     position: absolute;
     z-index: 1;
 
-    
 } */
 
 .titulo {
@@ -27,6 +26,7 @@
 }
 .cerrar_boton{
     padding-left: 140px;
+    color:rgb(0, 0, 0);
 }
 
  .caja_form{
@@ -111,6 +111,7 @@ select {
    border-radius: 14px;
    transition : 1000ms;
    cursor: pointer;
+   width: 140px;
  
    }
    
