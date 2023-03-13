@@ -40,7 +40,7 @@ margin-top: 0px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-left: 35px;
+    /* padding-left: 35px; */
 }
 
 
@@ -136,7 +136,7 @@ p.parrafo_microred {
     height: 500px;
     font-size: 22px;
     font-family:  'Montserrat', sans-serif;
-    padding: 40px;
+    padding: 30px;
     margin-top: 15px;
     background-color:#ffffff;
     grid-template-columns: 100%;
@@ -145,7 +145,7 @@ p.parrafo_microred {
 
 .texto_patrocinadores{
     text-align: center;
-    height: 150px;
+    height: 30px;
 }
 
 h1{
@@ -153,15 +153,24 @@ h1{
 }
 .grid_patrocinadores {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 50% 50% ;
     align-items: center;
     align-items: baseline;
     justify-content: space-between;
     justify-content: center;
     justify-items: center;
+    gap: 20px;
 }
 
+.convocatoria{
+    width: 780px;
+    padding-left: 200px;
+}
 
+.ganadores{
+    width: 428px;
+    padding-left: 120px;
+}
 
 .redes{
 
@@ -206,25 +215,6 @@ h4{
   
   /* Tablets y pantallas más pequeñas */
 
-  @media(max-width: 500px) {
-    .btn {
-        font-family:  'Montserrat', sans-serif;
-        
-        font-size: 16px;
-   
-   
-   font-size: 15px;
-   text-align: center;
-   vertical-align: middle;
-        font-size: 15px;
-    }
-}
-
-
-
-
-
-
   @media(max-width: 1037px) {
     .como_usar {
         display: flex;
@@ -242,14 +232,6 @@ h4{
     }
 }
 
-@media(max-width: 500px) {
-    .como_usar {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-      
-    }
-}
 
 @media(max-width: 1037px) {
     .que_obtiene {
@@ -269,15 +251,6 @@ h4{
     }
 }
 
-
-@media(max-width: 500px) {
-    .que_obtiene {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        height: auto;
-    }
-}
 
 /*microred*/
 
@@ -322,17 +295,10 @@ h4{
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 890px;
     }
 }
 
-@media(max-width: 500px) {
-    .patrocinadores {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-    }
-}
 
 
 @media(max-width: 768px) {
@@ -344,25 +310,8 @@ h4{
     }
 }
 
-@media(max-width: 500px) {
-    .grid_patrocinadores {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-    }
-}
 
 
-@media(max-width: 500px) {
-    nav {
-      height: 100px;
-    }
-
-    .nav .flex {
-        flex-direction: column;
-      }
-}
 
 
 @media(max-width: 631px) {
@@ -384,10 +333,96 @@ h4{
         text-align: center;
         height: 60px;
     }
-    
+
     .grid_patrocinadores{
         gap:30px;
+    }
+
+
+    .ganadores{
+        width: 500px;
+        padding-left: 10px;
+     }
+
+     .convocatoria{
+        width: 600px;
+         padding-left: 10px;
+    }
+
+}
+
+
+@media(max-width: 500px) {
+    nav {
+      height: 100px;
+    }
+
+    .nav .flex {
+        flex-direction: column;
+      }
+}
+
+
+
+@media(max-width: 500px) {
+    .grid_patrocinadores {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+
+    .ganadores{
+       width: 350px; 
+       padding-left: 10px;
+    }
+    .convocatoria{
+        width: 350px;
+        padding-left: 10px;
+     }
+}
+
+
+@media(max-width: 500px) {
+    .patrocinadores {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+}
+
+@media(max-width: 500px) {
+    .btn {
+        font-family:  'Montserrat', sans-serif;
+        
+        font-size: 16px;
+   
+   
+   font-size: 15px;
+   text-align: center;
+   vertical-align: middle;
+        font-size: 15px;
     }
 }
 
 
+@media(max-width: 500px) {
+    .que_obtiene {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        height: auto;
+    }
+}
+
+
+@media(max-width: 500px) {
+    .como_usar {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+      
+    }
+}

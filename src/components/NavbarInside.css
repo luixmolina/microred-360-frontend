@@ -21,3 +21,28 @@ a.navbar-brand {
 
 }
 
+.cerrar_ul {
+    display: inline-block;
+    line-height: 40px;
+    margin-left: 30px;
+    margin-top: 15px;
+    list-style: none;
+}
+
+.cerrar_li{
+    float: right;
+}
+
+a.nav-link-cerrar {
+    text-decoration: none;
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    color: #000000;
+    margin-right: 0px;
+    margin-left: auto;
+    padding-right: 10px;
+}

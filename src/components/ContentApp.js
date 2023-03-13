@@ -1,13 +1,6 @@
 import React from 'react';
 import './ContentApp.css';
-import imagen1 from './img1.png';
-import imagen2 from './img2.png';
-import imagen3 from './img3.png';
-import cidet_logo from './logo-CIDET.png';
-import logo_gers from './logo-gers.jpg';
-import logo_colombia_inteligente from './logo_colombia_inteligente.png';
 import { Navigate } from "react-router-dom";
-import Login from './Login';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
@@ -25,7 +18,6 @@ if (goToLogin) {
       <>
       <Navbar />
 <div className="  container">
-
     <div id="microred" className="microred">
         <div className="flex-container">
 
@@ -43,15 +35,13 @@ if (goToLogin) {
                     </div>
                 </div>
         <div className='imagen_microrred'>
-        <img src={imagen1} className="imagenes img_shadown" width="520" height="340"alt=""></img>
+        <img src="https://mr360bucket.s3.amazonaws.com/mr360_images/img1.png" className="imagenes img_shadown" width="520" height="340"alt=""></img>
     </div>
     </div>
     </div>
-
-
     <div id="como_usar" className="como_usar">
             <div className="como_usar_imagen">
-             <img src={imagen2} className="imagenes " alt="" width="500" height="300"></img>
+             <img src="https://mr360bucket.s3.amazonaws.com/mr360_images/img2.png" className="imagenes " alt="" width="500" height="300"></img>
             </div>
         <div className="texto_como_usar"> <h1 >&iquest;C&oacute;mo usar?</h1>
             <p><span >Para conocer los resultados que entrega la herramienta Microrred 360, es necesario:</span></p>
@@ -64,7 +54,6 @@ if (goToLogin) {
             </div>
         </div>
     </div>
-
     <div id="que_obtiene" className="que_obtiene">
         <div className="boton_center"><h1>¿Qué se obtiene?</h1>
             Microrred 360 está en la capacidad de
@@ -79,24 +68,38 @@ if (goToLogin) {
             <button className="btn" onClick={() =>{ setGoToLogin(true)}}>CALCULA TU MICRORRED</button>
         </div>
         <div>
-         <img src={imagen3} className="imagenes " width="550" height="350" alt="vg"></img>
+         <img src="https://mr360bucket.s3.amazonaws.com/mr360_images/img3.png" className="imagenes " width="550" height="350" alt="vg"></img>
          </div> 
     </div>
-
-    <div id="patrocinadores" className="patrocinadores">
+    {/* <div id="patrocinadores" className="patrocinadores">
         <h1 className="texto_patrocinadores">Patrocinadores</h1>
         <div className="patrocinadores2">
             <div className="grid_patrocinadores">
             <div>
-             <img src={cidet_logo} alt=""  width="280" height="70"></img>
+             <img src="https://mr360bucket.s3.amazonaws.com/mr360_images/logo-CIDET.png" alt=""  width="280" height="70"></img>
              </div>
-            <div> <img src={logo_gers} alt="" width="280" height="80"></img>
+            <div> <img src="https://mr360bucket.s3.amazonaws.com/mr360_images/logo_gers.png" alt="" width="280" height="80"></img>
             </div>
-            <div> <img src={logo_colombia_inteligente} alt="" width="300" height="100"></img>
+            <div> <img src="https://mr360bucket.s3.amazonaws.com/mr360_images/logo_colombia_inteligente.png" alt="" width="300" height="100"></img>
             </div>
             </div>
         </div>
+    </div> */}
+    <div id="patrocinadores" className="patrocinadores">
+        <h1 className="texto_patrocinadores">Noticias</h1>
+        <div className="patrocinadores2">
+            <div className="grid_patrocinadores">
+                <div>
+                    <img className="convocatoria" src="https://mr360bucket.s3.amazonaws.com/Convocatoria.jpg" alt=""  ></img>
+                </div>
+                <div>
+                    <img className="ganadores" src="https://mr360bucket.s3.amazonaws.com/mr360_images/Ganadores.jpg" alt="" ></img>
+                </div>
+            </div>
+        </div>
     </div>
+   
+   
     </div>
     <Footer />
     </>

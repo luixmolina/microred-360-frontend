@@ -1,32 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './Dashboard.css';
 import NavbarInside from './NavbarInside';
 import Footer2 from './Footer2';
-
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 
 
 function Dashboard() {
 
     const [goToForm, setGoToForm] = React.useState(false);
-    
-
-
-   
-    useEffect(() => {
-        const token = localStorage.getItem('token')
-        if(token){
-            // const user = jwt.decode(token)
-            // if(!user){
-            //     localStorage.removeItem('token')
-            //     Navigate.replace('/')
-            // } else {
-            //     populateQuote()
-            // }
-        }
-    })
-
 
     if (goToForm) {
         return <Navigate to="/Mapa"></Navigate>;
@@ -37,14 +19,12 @@ function Dashboard() {
     <NavbarInside/>
     <div className="  container_dashboard">
         <div className="imagen_dashboard"></div>
-
         <div className="caja_bienvenida">
             <div className="encabezado_bienvenida">
             ¡Bienvenido!
             </div>
             <div className="contenido_bienvenida">
                 <div className="caja_texto">
-
                 <span>Microrred 360 está en la capacidad de suministrar
                     los tamaños y los tipos de activos que integran las microrredes diseñadas con la aplicación. Asimismo,
                     el usuario podrá conocer los beneficios técnicos,

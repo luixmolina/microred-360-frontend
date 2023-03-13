@@ -1,14 +1,15 @@
 import { Outlet, Navigate } from "react-router-dom";
 import React , { useEffect, useState,useRef} from 'react';
+import Login from './Login';
+
 
 const PrivateRoutes = () => {
-    
+
+
     const [isAuthWaiting, setisAuthWaiting] = useState(true);
     const [authUser, setauthUser] = useState(false);
-   const authUser2 = useRef(false)
-    let auth = {'token': false}
+    const authUser2 = useRef(false)
 
-    
      useEffect(() => {
         
         async function populateQuote(){
@@ -22,51 +23,29 @@ const PrivateRoutes = () => {
             console.log(data)
             if(data.status === 'success'){
 
-                
                  authUser2.current =true
                  setisAuthWaiting(false)
                  console.log(authUser2);
-          
                  setauthUser(true);
-                
+                 console.log("prueba")
+
             } else {
               console.log(data.error)
-            
+
             }
-         
         }
         
         populateQuote();
 
-
     }, [isAuthWaiting])
- 
-   
+
     return(
         <>
         {console.log(authUser2)}
-        
-        {  isAuthWaiting ? <></> : authUser2.current ? <Outlet /> : <Navigate to="/" />}
-        
 
-         {/* {
-            (() => {
-            if(isAuthWaiting === true){
-                <></>
-            } else{
-                if(authUser2.current === true){
-                    <Outlet />
-                } else {
-                    <Navigate to="/" />
-                }
-            }
-        })()
-
-         } */}
+        {  isAuthWaiting ?  <Login /> : authUser2.current ? <Outlet /> : <Navigate to="/" />}
         </>
-        
     )
-
 }
 
 export default PrivateRoutes

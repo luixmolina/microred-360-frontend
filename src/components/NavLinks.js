@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React   from 'react';
 
 const NavLinks = (props) => {
     return ( 
@@ -13,10 +13,10 @@ const NavLinks = (props) => {
             <a href="#que_obtiene" className="nav-link">Resultados</a>
         </li>
         <li className="nav-list-item" onClick={() => props.isMobile && props.closeMobileMenu()}>
-            <a href="#patrocinadores" className="nav-link">Patrocinadores</a>
+            <a href="#patrocinadores" className="nav-link">Noticias</a>
         </li>
-    </ul>
+        </ul>
      );
 }
- 
+
 export default NavLinks;

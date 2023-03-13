@@ -1,0 +1,33 @@
+
+
+.container_error{
+   
+    position: relative; 
+    height:700px;
+   width:1350px;
+}
+
+
+.imagen_background_error{
+    padding-top: 10px;
+    background-image: url("https://mr360bucket.s3.amazonaws.com/mr360_images/gers_error_404.png");
+    background-repeat:no-repeat;
+    background-size: 100%;
+    height:700px;
+    width:1400px;
+    position: absolute;
+    z-index: 1;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

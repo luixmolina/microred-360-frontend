@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import NavbarInside from './NavbarInside';
 import Footer from './Footer';
 import Cargando from './Cargando';
+import Error500 from './Error500';
 import PerfilTensiones from './perfil_tensiones';
 import Graficos from './Graficos';
 
@@ -14,8 +15,6 @@ function MR360() {
 
     let { state } = useLocation();
     console.log(state.datos);
-
-
 
     useEffect(() => {
         fetch("http://localhost:5000/obtenerCalculoMr360", {
@@ -32,17 +31,18 @@ function MR360() {
             }
         )
     }, [])
+
     return(
         <div>
             {
                 ( backendData === undefined) ? (
-                    <div className="  container_resultados">
-                    <Cargando />
-                </div>
-                ): (
+                    <div className="container_resultados">
+                        <Cargando />
+                    </div>
+                ): ( backendData.status === "error") ?  <Error500 /> : (
                     <>
                     <NavbarInside />
-                    <div className="  container_resultados">
+                    <div className="container_resultados">
                     <Resumen energy_saving={backendData[0].energy_saving} economic_saving={backendData[0].economic_saving} environmental_saving={backendData[0].environmental_saving} 
                     battery_bank_power={backendData[1].battery_bank_power} inverter_type={backendData[1].inverter_type} pv_power={backendData[1].pv_power}
                     charger_inverter_power={backendData[1].charger_inverter_power}></Resumen>
@@ -59,22 +59,18 @@ function MR360() {
                      investment_cost={backendData[3].investment_cost}
                      exported_energy={backendData[3].exported_energy}></Detallados>
                     </div>
-                    
                     <Graficos imported_energy_profile={backendData[4].imported_energy_profile}
                       exported_energy_profile={backendData[4].exported_energy_profile}
                       solar_profile={backendData[4].solar_profile}
                       charge_battery_profile={backendData[4].charge_battery_profile}
                       discharge_battery_profile={backendData[4].discharge_battery_profile}
-                      demand_profile={backendData[4].demand_profile}></Graficos>
+                      demand_profile={backendData[4].demand_profile}>
+                    </Graficos>
                     <PerfilTensiones voltage_profile={backendData[5].voltage_profile}/>
-
-
                     <Footer />
                     </>
                  )}
-
         </div>
-
     )
 }
 

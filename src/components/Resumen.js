@@ -4,26 +4,25 @@ import inversor_cargador from './inversor_cargador.png';
 import hibrido from './hibrido.png';
 
 
-
-
 const Resumen = (props) => {
-    var imagen;
-  if(props.inverter_type == "Ongrid e inversor cargador"){
-    imagen = inversor_cargador;
-  } else{
-    imagen = hibrido;
-  }
-    return (
-    <>
-          <div className="tarjeta_principal">
-        <div className="tarjeta_imagen">
-          <div className="encabezado_imagen">
+      var imagen;
+      if(props.inverter_type == "Ongrid e inversor cargador"){
+          imagen = inversor_cargador;
+      } else{
+          imagen = hibrido;
+      }
+
+      return (
+          <>
+            <div className="tarjeta_principal">
+            <div className="tarjeta_imagen">
+            <div className="encabezado_imagen">
             <h1>Tu diseño de microred</h1>
-          </div>
-          <img src={imagen} className="imagenes img_shadown" width="520" height="620" alt="" /> 
-        </div>
-        <div className="tarjeta_resultados">
-          <div className="tarjeta_resumen">
+            </div>
+            <img src={imagen} className="imagenes img_shadown" width="520" height="620" alt="" /> 
+            </div>
+            <div className="tarjeta_resultados">
+            <div className="tarjeta_resumen">
             <div className="encabezado">
               <h1> Resumen general</h1>
             </div>

@@ -106,3 +106,74 @@
    
 }
   
+
+.encabezado_form_usu {
+  background-color:#4f7df2;
+  color: #ffffff;
+  padding: 5px;
+  border-top-left-radius: 10px ;
+  border-top-right-radius: 10px ;
+  font-size: 26px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
+@media(max-width: 500px) {
+  .contenido_usu {
+      
+      width: auto;
+  }
+
+  .titulo {
+    padding-left: 35px;
+  }
+  .caja_usu{
+      width: 250px;
+      margin-top: 0px;
+      left: 37%;
+  }
+  .btn{
+      font-size: 17px;
+  }
+
+  
+
+
+
+ .encabezado_form_usu {
+ width: 240px;
+ position: relative;
+  
+}
+.encabezado_form {
+  width: 210px;
+  position: relative;
+  left: 37%;
+   
+ }
+ .encabezado_usu {
+  width: 240px;
+  position: relative;
+
+ }
+
+ .cerrar_boton{
+  padding-left: 0px;
+ }
+.contenido_form {
+      
+  width: 220px;
+  position: relative;
+  left: 37%;
+}
+
+/* select {
+  background-color :#c9e4ff;
+  width: 120px;
+} */
+}

@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React   from 'react';
 import './PerfilTensiones.css';
 import html2canvas from 'html2canvas';
 import jsPDF, { jsPDFAPI } from 'jspdf';

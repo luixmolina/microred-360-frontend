@@ -6,17 +6,15 @@ import {useState} from 'react';
 import './graficos.css';
 
 
-
 function Graficos(props) {
 
-const labels = [];
+    const labels = [];
 
-for (let i = 0; i < 24; i++) {
-    labels.push(i+"h");
-  }
+    for (let i = 0; i < 24; i++) {
+        labels.push(i+"h");
+    }
 
-
-  const options = {
+    const options = {
     plugins: {
       title: {
         display: true,
@@ -37,12 +35,10 @@ for (let i = 0; i < 24; i++) {
         stacked: true,
       },
     },
-  };
+    };
 
 
-
-
-  const options2 = {
+    const options2 = {
     plugins: {
       title: {
         display: true,
@@ -63,7 +59,7 @@ for (let i = 0; i < 24; i++) {
         stacked: true,
       },
     },
-  };
+    };
 
     const [chartData, setChartData] = useState({
         labels: labels,
@@ -113,29 +109,25 @@ for (let i = 0; i < 24; i++) {
     ]
     });
 
-    console.log(props.battery_energy);
   return (
-
     <>
-    <div className="tarjeta_graficos">
-    <div className="encabezado_graficos" >
-            <h1>
-               Operación prevista de la microrred
-            </h1>
+      <div className="tarjeta_graficos">
+          <div className="encabezado_graficos" >
+              <h1>
+                 Operación prevista de la microrred
+              </h1>
+          </div>
+        <div className="container_graficos" >
+            <Bar options={options} data={chartData}></Bar>
+            <div className="nota2">
+                Nota: A modo ilustrativo en el anterior grafico se presenta la operación prevista de la microred diseñada para el primer dia del horizonte de planificación.
+            </div>
         </div>
-    <div className="container_graficos" >
-   <Bar options={options} data={chartData}></Bar>
-   <div className="nota2">
-   Nota: A modo ilustrativo en el anterior grafico se presenta la operación prevista de la microred diseñada para el primer dia del horizonte de planificación.
-   </div>
-   </div>
-   <div className="container_graficos2">
-   <Bar options={options2} data={chartData2}></Bar>
-   </div>
-   </div>
+      <div className="container_graficos2">
+          <Bar options={options2} data={chartData2}></Bar>
+        </div>
+      </div>
     </>
-
-
   )
 }
 

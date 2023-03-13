@@ -1,7 +1,5 @@
 import React from 'react';
 import './Form.css';
-import NavbarInside from './NavbarInside';
-import Footer from './Footer';
 import { Link} from 'react-router-dom';
 import {useState} from 'react';
 import {IoMdCloseCircleOutline} from "react-icons/io";
@@ -13,15 +11,19 @@ function Form() {
   const [radiacion, setRadiacion] = useState('');
   const [estrato, setEstrato] = useState('');
   const [proveedor, setProveedor] = useState('');
-   var datos = {"radiation_level": radiacion, "economic_level": estrato, "energy_company": proveedor};
+  const [hideLightbox, setHideLightbox] = useState(true);
+
+  var datos = {"radiation_level": radiacion, "economic_level": estrato, "energy_company": proveedor};
+
   if (radiacion !== "") {
-   console.log(radiacion);
-}
-const [hideLightbox, setHideLightbox] = useState(true);
+    console.log(radiacion);
+  }
+
+
+
   return (
 
     <>
-    {/* <NavbarInside /> */}
         <div className="  container_formulario">
     <div className="imagen_form"></div>
 
@@ -76,10 +78,7 @@ const [hideLightbox, setHideLightbox] = useState(true);
     </div>
     </div>
         </div>
-    {/* <Footer /> */}
     </>
-
-
   )
 }
 

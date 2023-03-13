@@ -31,7 +31,7 @@ function Detallados(props) {
                     </div><br></br>
                     <span>Energía exportada a la red eléctrica principal [kWh]:</span>
                     <div className="caja_resultados">
-                        {props.exported_energy} 
+                        {props.exported_energy}
                     </div><br></br>
                 </div>
                 <div className="caja_respuesta_detallados">
