@@ -39,7 +39,7 @@ function Mapa() {
   var datos = {"radiation_level": radiacion, "economic_level": estrato, "energy_company": proveedor};
   
   if (radiacion !== "") {
-      console.log(radiacion);
+     
   }
 
   async function validarFormulario(event) {
@@ -71,9 +71,9 @@ function Mapa() {
               "ltd": latitud,
             };
     
-            console.log(JSON.stringify(datosBackend));
+         
        
-            fetch("http://10.0.2.213:5005/calculator_map", {
+            fetch("http://10.0.0.248:5005/calculator_map", {
               method: "POST",
               headers: {"Content-type": "application/json;charset=UTF-8"},
               body: JSON.stringify(datosBackend)
@@ -84,7 +84,7 @@ function Mapa() {
             ).then(
               data => {
                 setRadiacion(data[0].radiation_level);
-                  console.log(data[0].radiation_level);
+                  
     
                   if(data[0].radiation_level === 0){
     
@@ -101,7 +101,7 @@ function Mapa() {
                       longitude: longitud-0.00040,
                       latitude: latitud,
                     }
-                    console.log("nnnnn");
+                 
           
                     setViewState(newViewState)
           
@@ -135,9 +135,9 @@ function Mapa() {
           "ltd": latitud,
         };
 
-        console.log(JSON.stringify(datosBackend));
+      
 
-        fetch("http://10.0.2.213:5005/calculator_map", {
+        fetch("http://10.0.0.248:5005/calculator_map", {
           method: "POST",
           headers: {"Content-type": "application/json;charset=UTF-8"},
           body: JSON.stringify(datosBackend)
@@ -149,7 +149,7 @@ function Mapa() {
         ).then(
              data => {
                   setRadiacion(data[0].radiation_level);
-                  console.log(data[0].radiation_level);
+                 
 
                   if(data[0].radiation_level === 0){
 
@@ -215,7 +215,7 @@ function Mapa() {
     onMove={moverMapa}
     style={{width: '100vw', height: '100vh'}}
     mapStyle="mapbox://styles/mapbox/outdoors-v12"
-    mapboxAccessToken="pk.eyJ1IjoibHVpc21vbGluYTIiLCJhIjoiY2xkdGM1ZWwyMDR6NjNwbzlucnRyaG80dSJ9.-7bIdii__JEKxuIY0hROYA" 
+    mapboxAccessToken= {process.env.React_app_KEY_MAPBOX} 
     onDblClick={handleClick} onTouchEnd={handleTouch} {...settings} >
 
     <Marker latitude={lngLat[1]} longitude={lngLat[0]}  pitchAlignment='viewport'   >

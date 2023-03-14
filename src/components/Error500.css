@@ -20,3 +20,12 @@
 
 }
 
+
+
+
+@media(max-width: 500px) {
+    .imagen_background_500{
+        width:400px;
+    }
+}
+

@@ -22,7 +22,7 @@ const RecuperarPassword = () => {
             response => response.json()
          ).then(
             data => {
-              console.log(data);
+            
                if(data.status === "Error"){
                   window.location.href = '/login'
                } else{
@@ -51,7 +51,7 @@ const RecuperarPassword = () => {
             })
 
             const data = await responseRegister.json()
-            console.log(data)
+           
             if(data.status == 'success'){
 
                   Swal.fire({

@@ -14,7 +14,7 @@ function MR360() {
     const [backendData, setBackendData] = useState(undefined)
 
     let { state } = useLocation();
-    console.log(state.datos);
+   
 
     useEffect(() => {
         fetch("http://localhost:5000/obtenerCalculoMr360", {
@@ -27,7 +27,7 @@ function MR360() {
         ).then(
             data => {
                 setBackendData(data)
-                console.log(data);
+         
             }
         )
     }, [])
@@ -42,7 +42,7 @@ function MR360() {
                 ): ( backendData.status === "error") ?  <Error500 /> : (
                     <>
                     <NavbarInside />
-                    <div className="container_resultados">
+                    <div id="container_resultados" className="container_resultados">
                     <Resumen energy_saving={backendData[0].energy_saving} economic_saving={backendData[0].economic_saving} environmental_saving={backendData[0].environmental_saving} 
                     battery_bank_power={backendData[1].battery_bank_power} inverter_type={backendData[1].inverter_type} pv_power={backendData[1].pv_power}
                     charger_inverter_power={backendData[1].charger_inverter_power}></Resumen>

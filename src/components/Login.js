@@ -45,7 +45,7 @@ function Login() {
          });
       }
 
-          console.log(data)
+   
    }
 
 

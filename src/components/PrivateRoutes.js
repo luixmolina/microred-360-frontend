@@ -20,17 +20,17 @@ const PrivateRoutes = () => {
             })
     
             const data = await req.json()
-            console.log(data)
+          
             if(data.status === 'success'){
 
                  authUser2.current =true
                  setisAuthWaiting(false)
-                 console.log(authUser2);
+                 
                  setauthUser(true);
-                 console.log("prueba")
+                
 
             } else {
-              console.log(data.error)
+              
 
             }
         }
@@ -41,7 +41,7 @@ const PrivateRoutes = () => {
 
     return(
         <>
-        {console.log(authUser2)}
+    
 
         {  isAuthWaiting ?  <Login /> : authUser2.current ? <Outlet /> : <Navigate to="/" />}
         </>

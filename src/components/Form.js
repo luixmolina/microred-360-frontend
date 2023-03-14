@@ -15,11 +15,6 @@ function Form() {
 
   var datos = {"radiation_level": radiacion, "economic_level": estrato, "energy_company": proveedor};
 
-  if (radiacion !== "") {
-    console.log(radiacion);
-  }
-
-
 
   return (
 

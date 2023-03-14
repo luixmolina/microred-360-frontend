@@ -24,7 +24,7 @@ const RecuperarPassword = () => {
       })
 
       const data = await responseRegister.json()
-      console.log(data)
+     
       if(data.status === "success"){
               Swal.fire({
                title: 'Enviamos a tu correo electrónico un link de cambio de clave con el que podrás finalizar el proceso de recuperación de tu cuenta.',

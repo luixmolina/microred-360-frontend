@@ -29,7 +29,7 @@ function SingUp() {
         }
 
         if(nombre && correo && telefono && password && politicas === true){
-            console.log(politicas);
+            
          const responseRegister = await fetch('http://localhost:5000/registrarUsuario', {
                 method: 'POST',
                 headers:{
@@ -59,7 +59,7 @@ function SingUp() {
                 });
         
         } else{
-            console.log("error");
+           
         }
         }
     }
