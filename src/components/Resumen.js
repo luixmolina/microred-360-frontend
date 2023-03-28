@@ -2,6 +2,8 @@ import React, { Component }  from 'react';
 import './Resumen.css';
 import inversor_cargador from './inversor_cargador.png';
 import hibrido from './hibrido.png';
+import InterpretacionGraficos from './InterpretacionGraficos.pdf';
+
 
 
 const Resumen = (props) => {
@@ -15,11 +17,19 @@ const Resumen = (props) => {
       return (
           <>
             <div className="tarjeta_principal">
+            
             <div className="tarjeta_imagen">
+           
             <div className="encabezado_imagen">
+            
             <h1>Tu diseño de microred</h1>
             </div>
+           
+            
             <img src={imagen} className="imagenes img_shadown" width="520" height="620" alt="" /> 
+            <div className="nota2">
+            <a href={InterpretacionGraficos} rel="noreferrer" target="_blank" className="interpretacion_graficos">Click aquí para la intepretación de los resultados.</a>
+               </div>
             </div>
             <div className="tarjeta_resultados">
             <div className="tarjeta_resumen">
@@ -29,7 +39,7 @@ const Resumen = (props) => {
             <div>
               <div className="caja_datos">
                 <div className="caja_respuesta"> 
-                    <span>Ahorro energético [kWh/año]:</span>
+                    <span>Energía generada por la microrred [kWh/año]:</span>
                     <br></br>
                     <div className="caja_resultados">
                         <span> {props.energy_saving} </span>
@@ -37,7 +47,7 @@ const Resumen = (props) => {
                     <span>Ahorro económico [$/año]:</span>
                     <br></br>
                     <div className="caja_resultados">
-                        <span> ${props.economic_saving} </span>
+                        <span> {props.economic_saving} </span>
                     </div> <br></br>
                  <span>Ahorro ambiental [kg/año]:</span>
                     <br></br>

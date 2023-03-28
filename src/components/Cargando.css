@@ -35,6 +35,14 @@
 }
 
 
+.nota3{
+  font-size: 24px;
+}
+
+.titulo_cargando{
+  font-size: 30px;
+  word-spacing: 5px;
+}
 
  .caja_cargando{
     position: absolute;
@@ -55,7 +63,7 @@
 .texto_cargando {
 
     font-size: 40px;
-    text-align: justify;
+    text-align: center;
     font-weight: bold;
     padding-top: 300px;
     margin-left: -70px;
@@ -93,7 +101,7 @@
   margin: 50px auto;
   border-radius: 5px;
   box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
-  margin-top: 400px;
+  margin-top: 430px;
   margin-left: -90px;
 }
 
@@ -112,11 +120,11 @@
 }
 
 .stripes.animated {
-animation: animate-stripes 180.0s linear infinite;
+animation: animate-stripes 240.0s linear infinite;
 }
 
 .stripes.animated.slower {
-animation-duration: 180.0s;
+animation-duration: 240.0s;
 }
 
 
@@ -129,7 +137,7 @@ background-color: #34c2e3;
 border-radius: 3px;
 box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
 position: relative;
-animation: auto-progress 180s infinite linear;
+animation: auto-progress 240s infinite linear;
 }
 
 

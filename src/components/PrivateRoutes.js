@@ -14,7 +14,7 @@ const PrivateRoutes = () => {
         
         async function populateQuote(){
 
-            const req = await fetch('http://localhost:5000/reviewToken', {
+            const req = await fetch(process.env.REACT_APP_URL_REVIEW_TOKEN, {
                 headers: {'x-access-token': localStorage.getItem('token'),
             },
             })

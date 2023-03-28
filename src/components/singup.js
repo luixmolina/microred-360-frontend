@@ -13,6 +13,7 @@ function SingUp() {
      const [cargo, setCargo] = useState('');
      const [telefono, setTelefono] = useState('');
      const [password, setPassword] = useState('');
+     const [password2, setPassword2] = useState('');
      const [politicas, setPoliticas] = useState(false);
      const [error, setError] = useState(false);
 
@@ -21,16 +22,16 @@ function SingUp() {
 
         event.preventDefault();
 
-        
+
         if(nombre.length === 0 || correo.length === 0 || telefono.length === 0 || password.length === 0 || politicas === false){
             setError(true);
         } else{
             setError(false);
         }
 
-        if(nombre && correo && telefono && password && politicas === true){
+        if(nombre && correo && telefono && password === password2 && politicas === true){
             
-         const responseRegister = await fetch('http://localhost:5000/registrarUsuario', {
+         const responseRegister = await fetch(process.env.REACT_APP_URL_REGISTRAR_USUARIO, {
                 method: 'POST',
                 headers:{
                     'Content-Type': 'application/json',
@@ -101,6 +102,13 @@ function SingUp() {
                         <input type="password" className="inputs_singup  password_singup" value={password} onChange={ev => setPassword(ev.target.value)} />
                         {error && password.length<=0?
                             <label className="error_formulario" >La contraseña es requerida</label>:""}
+                        <br></br><br></br>
+                         Confirmar contraseña*:<br></br>
+                        <input type="password" className="inputs_singup  password_singup" value={password2} onChange={ev => setPassword2(ev.target.value)} />
+                        {error && password.length<=0?
+                            <label className="error_formulario" >La contraseña es requerida</label>:""}
+                            {password !== password2?
+                            <label className="error_formulario" >Las contraseñas no coinciden</label>:""}
                         <br></br>
                         <input type="checkbox"  onChange={ev => setPoliticas(ev.target.checked)}/><span className="politicas">Al enviar el formulario, autorizo a GERS a ponerse en contacto conmigo. <a href={PoliticasGers} rel="noreferrer" target="_blank" className="subrayado">Y acepto la politica de privacidad de GERS.*</a></span><br></br>
                         {error && politicas===false?

@@ -12,9 +12,9 @@ function Cargando() {
             <div className="imagen_cargando">
             </div>
             <div className="texto_cargando">
-             <span>MICRORRED 360 <br></br>
-                CALCULANDO...
-            </span>
+             <span className='titulo_cargando'>MICRORRED 360 CALCULANDO</span>
+                <br></br>
+                <div className='nota3'>(Tiempo estimado: 4 minutos)</div>
             </div>
             <div className="progress-bar-container">
     <div className="progress-bar stripes">

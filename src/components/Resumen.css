@@ -207,7 +207,29 @@ h1{
 }
 
 
+.kw_texto{
+    font-size: 18px;
+}
 
+.nota{
+    margin-left: 40px;
+    font-size: 13.5px;
+    background-color: #c9e4ff;
+    padding: 3px;
+}
+
+.nota2{
+    margin-top: 50px;
+    padding-top: 0px;
+   
+    font-size: 16px;
+    background-color: #c9e4ff;;
+   margin-left: -180px;
+}
+
+.nota2 a:link {
+    color: rgb(68, 0, 255);
+}
 
 /*celulares y tablets*/
 
@@ -348,15 +370,11 @@ h1{
         width: 90%;
          height: auto;
     }
+
+    .nota2{
+   
+       margin-left: 0px;
+    }
 }
 
-.kw_texto{
-    font-size: 18px;
-}
 
-.nota{
-    margin-left: 40px;
-    font-size: 14px;
-    background-color: #c9e4ff;
-    padding: 3px;
-}

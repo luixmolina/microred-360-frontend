@@ -13,7 +13,7 @@ const RecuperarPassword = () => {
          
       event.preventDefault();
       
-      const responseRegister = await fetch('http://localhost:5000/forgot_password', {
+      const responseRegister = await fetch(process.env.REACT_APP_URL_FORGOT_PASSWORD, {
               method: 'POST',
               headers:{
                   'Content-Type': 'application/json',

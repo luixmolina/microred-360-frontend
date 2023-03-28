@@ -12,8 +12,8 @@ import {IoMdCloseCircleOutline} from "react-icons/io";
 function Mapa() {
 
   const [viewState, setViewState] = React.useState({
-    longitude: 287,
-    latitude: 4,
+    longitude: -76.52199013345891,
+    latitude: 3.415396327978115,
     zoom: 4.5
   });
 
@@ -21,12 +21,12 @@ function Mapa() {
   const [ocultarCajaUsar, setocultarCajaUsar] = useState(false);
   const [error, seterror] = useState(false);
   const [settings, setsettings] = useState({
-    dragPan: false,
-    dragRotate: false,
-    scrollZoom: false,
-    touchZoom: false,
-    touchRotate: false,
-    keyboard: false,
+    dragPan: true,
+    dragRotate: true,
+    scrollZoom: true,
+    touchZoom: true,
+    touchRotate: true,
+    keyboard: true,
 
     doubleClickZoom: false
     });
@@ -34,24 +34,42 @@ function Mapa() {
   const [lngLat, setlngLat] = useState([-76.549480,3.398332]);
   const [radiacion, setRadiacion] = useState('');
   const [estrato, setEstrato] = useState('');
+  const [horaFalla, setHoraFalla] = useState('');
+  const dia_falla = useRef(0);
+  const mes_falla = useRef(0);
+  const [fechaFalla, setFechaFalla] = useState('');
   const [timeout, settimeout] = useState('undefined');
   const [proveedor, setProveedor] = useState('');
-  var datos = {"radiation_level": radiacion, "economic_level": estrato, "energy_company": proveedor};
+  var datos = {"radiation_level": radiacion,
+                "economic_level": estrato,
+                "energy_company": proveedor,
+                "day_month": dia_falla.current,
+                "month_year": mes_falla.current,
+                "time_day": horaFalla
+  };
   
-  if (radiacion !== "") {
-     
-  }
-
+  
   async function validarFormulario(event) {
 
       event.preventDefault();
 
 
-      if(estrato==="" || proveedor === ""){
+      if(estrato==="" || proveedor === "" || horaFalla === "" || fechaFalla === ""){
             seterror(true);
       }
   }
 
+   function obtenerFechaFalla(valorFecha) {
+
+    var parts =valorFecha.split('-');
+    console.log(parts)
+    setFechaFalla(valorFecha);
+    dia_falla.current = parseInt(parts[2]);
+    mes_falla.current = parseInt(parts[1]);
+    console.log(dia_falla.current);
+    console.log(mes_falla.current);
+
+  }
     
     function handleTouch(evt)  {
 
@@ -62,7 +80,7 @@ function Mapa() {
     
       settimeout(setTimeout(function () {
 
-          if(ocultarCajaUsar === true) {
+          
             var longitud = parseFloat(evt.lngLat.lng);
             var latitud = parseFloat(evt.lngLat.lat);
             setlngLat([longitud,latitud]);
@@ -70,10 +88,8 @@ function Mapa() {
               "lng": longitud,
               "ltd": latitud,
             };
-    
-         
-       
-            fetch("http://10.0.0.248:5005/calculator_map", {
+
+            fetch(process.env.REACT_APP_URL_CALCULATOR_MAP, {
               method: "POST",
               headers: {"Content-type": "application/json;charset=UTF-8"},
               body: JSON.stringify(datosBackend)
@@ -110,12 +126,12 @@ function Mapa() {
                         scrollZoom: false,
                         touchZoom: false,
                         touchRotate: false,
-                        keyboard: true,
+                        keyboard: false,
                         doubleClickZoom: false,})
                   }
               }
             )
-        }
+        
       }, 3000));
 
     }
@@ -123,7 +139,7 @@ function Mapa() {
 
     function handleClick(evt) {
 
-      if(ocultarCajaUsar === true) {
+      if(hideLightbox === true) {
 
         var longitud = parseFloat(evt.lngLat.lng);
         var latitud = parseFloat(evt.lngLat.lat);
@@ -135,9 +151,9 @@ function Mapa() {
           "ltd": latitud,
         };
 
-      
-
-        fetch("http://10.0.0.248:5005/calculator_map", {
+       console.log(datosBackend);
+        console.log(process.env.REACT_APP_URL_CALCULATOR_MAP);
+        fetch(process.env.REACT_APP_URL_CALCULATOR_MAP, {
           method: "POST",
           headers: {"Content-type": "application/json;charset=UTF-8"},
           body: JSON.stringify(datosBackend)
@@ -174,7 +190,7 @@ function Mapa() {
                         scrollZoom: false,
                         touchZoom: false,
                         touchRotate: false,
-                        keyboard: true,
+                        keyboard: false,
                         doubleClickZoom: false,})
                   }
             }
@@ -198,15 +214,7 @@ function Mapa() {
     keyboard: true,})
     }
 
-    function ocultarAceptar(){
-  setocultarCajaUsar(true)
-  setsettings({dragPan: true,
-    dragRotate: true,
-    scrollZoom: true,
-    touchZoom: true,
-    touchRotate: true,
-    keyboard: true,})
-    }
+  
 
     return (
         <div id="mapa_container">
@@ -215,7 +223,7 @@ function Mapa() {
     onMove={moverMapa}
     style={{width: '100vw', height: '100vh'}}
     mapStyle="mapbox://styles/mapbox/outdoors-v12"
-    mapboxAccessToken= {process.env.React_app_KEY_MAPBOX} 
+    mapboxAccessToken= {process.env.REACT_APP_KEY_MAPBOX} 
     onDblClick={handleClick} onTouchEnd={handleTouch} {...settings} >
 
     <Marker latitude={lngLat[1]} longitude={lngLat[0]}  pitchAlignment='viewport'   >
@@ -249,7 +257,7 @@ function Mapa() {
                     <option value="6">Estrato 6</option>
                   </select> {error&&estrato.length<=0?
                             <label className="error_formulario">Por favor seleccione el estrato socioeconómico</label>:""}<br></br><br></br>
-                  <span>Proveedor del servicio de energia:</span><br></br>
+                  <span>Proveedor del servicio de energía:</span><br></br>
                  <select name="proveedor" id="proveedor" onChange={ev => setProveedor(parseInt(ev.target.value))}>
                  <option value=""></option>
                     <option value="1">CEO</option>
@@ -261,9 +269,52 @@ function Mapa() {
                     <option value="7">Otro</option>
                   </select>
                   {error&&proveedor.length<=0?
-                            <label className="error_formulario">Por favor seleccione el proveedor de energia</label>:""}
+                            <label className="error_formulario">Por favor seleccione el proveedor de energía</label>:""}
+                            <br></br> <br></br>
+                  <div className='cajaFecha'>
+                  <span> Fecha de interrupción del servicio de energía:</span>
+                  <input type="date" id="fechaFalla"
+                    
+                    min="2023-01-01" max="2023-12-31"  onChange={ev => obtenerFechaFalla(ev.target.value)}></input>
+                     {error&&fechaFalla.length<=0?
+                            <label className="error_formulario">Por favor seleccione la fecha de la falla</label>:""}
+                    <br></br>
+                    <span>Hora de interrupción del servicio de energía:</span>
+                 <select name="horaFalla" id="horaFalla" onChange={ev => setHoraFalla(parseInt(ev.target.value))}>
+                 <option value=""></option>
+                 <option value="0">0:00</option>
+                    <option value="1">1:00</option>
+                    <option value="2">2:00</option>
+                    <option value="3">3:00</option>
+                    <option value="4">4:00</option>
+                    <option value="5">5:00</option>
+                    <option value="6">6:00</option>
+                    <option value="7">7:00</option>
+                    <option value="8">8:00</option>
+                    <option value="9">9:00</option>
+                    <option value="10">10:00</option>
+                    <option value="11">11:00</option>
+                    <option value="12">12:00</option>
+                    <option value="13">13:00</option>
+                    <option value="14">14:00</option>
+                    <option value="15">15:00</option>
+                    <option value="16">16:00</option>
+                    <option value="17">17:00</option>
+                    <option value="18">18:00</option>
+                    <option value="19">19:00</option>
+                    <option value="20">20:00</option>
+                    <option value="21">21:00</option>
+                    <option value="22">22:00</option>
+                    <option value="23">23:00</option>
+                  </select>
+                  {error&&horaFalla.length<=0?
+                            <label className="error_formulario">Por favor seleccione la hora de la falla</label>:""}
+                  </div>
+                  <div className="nota_formulario">
+             Nota: La optimización técnico-económica se llevará a cabo considerando 2 horas de interrupción del servicio de energía en la red eléctrica principal.
+        </div>
                   <div className="calcula_microrred">
-             {proveedor !=="" && estrato !=="" ?<Link to="mr360" state={{datos: datos}} relative="path"><button className="btn_calcular">CALCULAR</button></Link>:<button className="btn_calcular">CALCULAR</button>}
+             {proveedor !=="" && estrato !=="" && fechaFalla !=="" && horaFalla !==""?<Link to="mr360" state={{datos: datos}} relative="path"><button className="btn_calcular">CALCULAR</button></Link>:<button className="btn_calcular">CALCULAR</button>}
         </div>
              </form>
             </div>
@@ -272,32 +323,7 @@ function Mapa() {
         </div>
      </div>
 
-     <div className={` ${ocultarCajaUsar ? "aceptar_hide" : ""}`}>
-     <div className="container_usu">
-    <div className="imagen_usu"></div>
-
-    <div className="caja_usu">
-        <div className="encabezado_usu">
-           <div className="titulo"> Microrred 360 </div> 
-         </div>
-         <div className="contenido_usu">
-             <div className="texto_usu">
-             1. Seleccione en el mapa interactivo dando zoom y doble click en el punto geográfico para el cual se desea ejecutar el análisis.<br></br><br></br>
-
-            2. Seleccionar el estrato socioeconómico para el cual se desea ejecutar el análisis.<br></br><br></br>
-
-            3. Seleccionar el proveedor del servicio de suministro de energía.
-            </div>
-             <br></br>
-             
-             <div className="aceptar_usu">
-               <button className="btn_aceptar" onClick={ocultarAceptar}>ACEPTAR</button>
-        </div>
-
-    </div>
-    </div>
-        </div>
-     </div>
+     
         </div>
     )
 }

@@ -55,7 +55,7 @@ function Form() {
                     <option value="5">Estrato 5</option>
                     <option value="6">Estrato 6</option>
                   </select> <br></br><br></br>
-                  <span>Proveedor del servicio de energia:</span><br></br>
+                  <span>Proveedor del servicio de energía:</span><br></br>
                  <select name="proveedor" id="proveedor" onChange={ev => setProveedor(parseInt(ev.target.value))}>
                     <option value="1"></option><option value="1">CELSIA</option>
                     <option value="2">ENEL</option>

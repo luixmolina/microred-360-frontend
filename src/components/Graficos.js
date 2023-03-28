@@ -8,12 +8,16 @@ import './graficos.css';
 
 function Graficos(props) {
 
-    const labels = [];
+    const labels = props.hour_index;
 
-    for (let i = 0; i < 24; i++) {
-        labels.push(i+"h");
-    }
+    // for (let i = 0; i < 48; i++) {
+    //     labels.push(i+"h");
+    // }
+    
 
+    
+
+    console.log(props.hour_index);
     const options = {
     plugins: {
       title: {
@@ -21,6 +25,13 @@ function Graficos(props) {
         text: ' Potencia [kW]',
         position: 'left',
       },
+      subtitle: {
+        display: true,
+        text: 'SOC [%]',
+        color: '#000000',
+        position: 'right',
+       
+      },
     },
     responsive: true,
     interaction: {
@@ -28,71 +39,148 @@ function Graficos(props) {
       intersect: false,
     },
     scales: {
-      x: {
+      x:
+      {
         stacked: true,
+        ticks: {
+          maxRotation: 0,
+        minRotation: 0,
+      
+        },
+        },
+      A: {
+        type: 'linear',
+        position: 'right',
+        ticks: { beginAtZero: true},
+        // Hide grid lines, otherwise you have separate grid lines for the 2 y axes
+        grid: { display: false }
       },
-      y: {
-        stacked: true,
+      B: {
+
+        position: 'left',
+        ticks: { beginAtZero: true },
+        grid: { display: true }
       },
+      
     },
     };
 
 
     const options2 = {
+      
     plugins: {
       title: {
         display: true,
         text: 'Demanda [kW]',
         position: 'left',
       },
+      subtitle: {
+        display: true,
+        text: 'Demanda [kW]',
+        position: 'right',
+        color: "white",
+      },
     },
     responsive: true,
     interaction: {
       mode: 'index',
       intersect: false,
     },
+    
     scales: {
       x: {
         stacked: true,
+        ticks: {
+          maxRotation: 0,
+          minRotation: 0,
+
+        },
       },
       y: {
-        stacked: true,
+        position: 'left',
+        ticks: { beginAtZero: true },
+        grid: { display: true }
+      },
+      A: {
+        position: 'right',
+        ticks: { beginAtZero: true,
+          min: 0,
+          max: 0,
+          color: "white",
+        },
+        grid: { display: true },
+    
+
       },
     },
+    
     };
 
     const [chartData, setChartData] = useState({
         labels: labels,
     datasets: [
       {
+        type: 'line' ,
+        label: 'SOC',
+        yAxisID: 'A',
+        borderColor: 'rgb(30,144,255,255)',
+        borderWidth: 2,
+        fill: false,
+        data: props.battery_energy,
+        
+      },
+      {
         id: 1,
-        label: 'Energia importada',
+        label: 'Carga BAT',
+        yAxisID: 'B',
+        data: props.charge_battery_profile,
+        backgroundColor: 'rgb(65,105,225,255)',
+        barThickness: 12,
+
+        borderWidth: 1,
+     
+      },{
+        id: 4,
+        label: 'Generación BAT',
+        yAxisID: 'B',
+        data: props.discharge_battery_profile,
+        backgroundColor: 'rgb(54,204,54)',
+        barThickness: 12,
+       
+
+        borderWidth: 1,
+      },
+
+      {
+        id: 6,
+        label: 'Energía importada',
+        yAxisID: 'B',
         data: props.imported_energy_profile,
         backgroundColor: 'rgb(255, 0, 0)',
-        stack: 'Stack 1',
-        barThickness: 10,
-      },  {
+        barThickness: 12,
+        borderWidth: 1,
+      }, 
+      
+      {
         id: 2,
-        label: 'Energia exportada',
+        label: 'Energía exportada',
+        yAxisID: 'B',
         data: props.exported_energy_profile,
-        backgroundColor: 'rgb(204, 0, 153)',
-        stack: 'Stack 2',
-        barThickness: 10,
-      },   {
+        backgroundColor: 'rgb(251,4,251)',
+        barThickness: 12,
+        borderWidth: 1,
+      },  
+      {
         id: 3,
-        label: 'Generacion PV',
+        label: 'Generación PV',
+        yAxisID: 'B',
         data: props.solar_profile,
-        backgroundColor: 'rgb(255, 255, 0)',
-        stack: 'Stack 4',
-        barThickness: 10,
-      },  {
-        id: 4,
-        label: 'Generacion BAT',
-        data: props.discharge_battery_profile,
-        backgroundColor: 'rgb(102, 255, 102)',
-        stack: 'Stack 5',
-        barThickness: 10,
+        backgroundColor: 'rgb(255, 165, 0)',
+        barThickness: 12,
+       
+        borderWidth: 1,
       }
+      
     ]
     });
 
@@ -101,10 +189,10 @@ function Graficos(props) {
     datasets: [
       {
         id: 1,
-        label: 'Demanda de energia',
+        label: 'Demanda de energía',
         data: props.demand_profile,
         backgroundColor: 'rgb(0,0,255,255)',
-        barThickness: 10,
+        barThickness: 12,
       }
     ]
     });
@@ -119,12 +207,14 @@ function Graficos(props) {
           </div>
         <div className="container_graficos" >
             <Bar options={options} data={chartData}></Bar>
-            <div className="nota2">
-                Nota: A modo ilustrativo en el anterior grafico se presenta la operación prevista de la microred diseñada para el primer dia del horizonte de planificación.
-            </div>
+            <div className="horaFalla">Hora de falla 1</div>
+            <div className="horaFalla2">Hora de falla 2</div>
+            <div className="notaHora">Hora del día</div>
         </div>
+        <div className="nota4">Nota: Para la interpretación del anterior grafico, tenga en cuenta que las barras se sobreponen.</div>
       <div className="container_graficos2">
-          <Bar options={options2} data={chartData2}></Bar>
+          <Bar options={options2} data={chartData2}  ></Bar>
+          <div className="notaHora2">Hora del día</div>
         </div>
       </div>
     </>

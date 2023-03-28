@@ -19,11 +19,57 @@
 
 .container_graficos2 {
     padding-top: 50px;
-    display: flex;
+   
     width: 900px;
-    margin: auto;
+ 
+  
     background-color: #fff;
 }
+
+.nota4{
+  background-color: white;
+  font-size: 13px;
+  width: 850px;
+
+  padding-left:50px;
+  padding-top: 5px;
+}
+
+
+.notaHora{
+  margin-top: -120px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.notaHora2{
+
+  text-align: center;
+  font-size: 13px;
+}
+.horaFalla{
+  padding-top: 32px;
+  padding-left: 156px;
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  text-align: center;
+  font-size: 10px;
+  color: red;
+
+}
+
+.horaFalla2{
+  padding-top: 72px;
+  padding-left: 280px;
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  text-align: center;
+  font-size: 10px;
+  color: red;
+
+}
+
+
 
 .encabezado_graficos {
     background-color:#4f7df2;
@@ -34,14 +80,6 @@
     width: 1262px;
 }
 
-.nota2{
- 
-    padding-left: 40px;
-    font-size: 14px;
-    background-color: #c9e4ff;
-    padding: 3px;
-
-}
 
 @media(max-width: 768px) {
     .tarjeta_graficos {
@@ -62,7 +100,7 @@
    }
 
    .container_graficos2{
-    width: 562px;
+    width: 542px;
   }
 
   .encabezado_neplan{

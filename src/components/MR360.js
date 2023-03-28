@@ -14,10 +14,10 @@ function MR360() {
     const [backendData, setBackendData] = useState(undefined)
 
     let { state } = useLocation();
-   
+   console.log(state.datos);
 
     useEffect(() => {
-        fetch("http://localhost:5000/obtenerCalculoMr360", {
+        fetch(process.env.REACT_APP_URL_CALCULATOR_MR360, {
             method: "POST",
             mode: 'cors',
             headers: {"Content-type": "application/json;charset=UTF-8"},
@@ -27,7 +27,7 @@ function MR360() {
         ).then(
             data => {
                 setBackendData(data)
-         
+                console.log(data);
             }
         )
     }, [])
@@ -59,14 +59,17 @@ function MR360() {
                      investment_cost={backendData[3].investment_cost}
                      exported_energy={backendData[3].exported_energy}></Detallados>
                     </div>
-                    <Graficos imported_energy_profile={backendData[4].imported_energy_profile}
+                    <Graficos imported_energy_profile={backendData[4].imported_energy_profile} 
                       exported_energy_profile={backendData[4].exported_energy_profile}
                       solar_profile={backendData[4].solar_profile}
                       charge_battery_profile={backendData[4].charge_battery_profile}
                       discharge_battery_profile={backendData[4].discharge_battery_profile}
-                      demand_profile={backendData[4].demand_profile}>
+                      demand_profile={backendData[4].demand_profile}
+                      hour_index={backendData[4].hour_index}
+                      battery_energy={backendData[4].battery_energy}>
+                      
                     </Graficos>
-                    <PerfilTensiones voltage_profile={backendData[5].voltage_profile}/>
+                     <PerfilTensiones demand_profile={backendData[4].demand_profile } solar_profile={backendData[4].solar_profile } battery_profile={backendData[4].battery_profile }  hour_index={backendData[4].hour_index}  /> 
                     <Footer />
                     </>
                  )}

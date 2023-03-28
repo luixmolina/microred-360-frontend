@@ -30,9 +30,9 @@ function Dashboard() {
                     el usuario podrá conocer los beneficios técnicos,
                     economicos y ambientales que podría obtener tras implementar la solución de Microrred 360.
                 </span><br></br><br></br>
-                <span>Para continuar, por favor seleccione un punto sobre el mapa.</span>
+                <span>Para continuar, seleccione un punto dentro de Colombia mediante doble click.</span>
                 <div className="calcula_microrred">
-                    <button className="btn_dashboard"  onClick={() =>{ setGoToForm(true)}}>CALCULA TU MICRORRED</button>
+                    <button className="btn_dashboard"  onClick={() =>{ setGoToForm(true)}}>ACEPTAR</button>
                 </div>
                 </div>
             </div>

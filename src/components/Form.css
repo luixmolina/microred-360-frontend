@@ -105,14 +105,20 @@ select {
    color: #fff;
    background-color: #4f7df2;
    padding: 10px ;
-   margin-bottom: 30px;
+   margin-bottom: 0px;
    border: none;
    box-shadow: rgb(104, 104, 104) 2px 4px 12px -3px;
    border-radius: 14px;
    transition : 1000ms;
    cursor: pointer;
    width: 140px;
+   
  
+   }
+
+   .nota_formulario{
+       font-size: 12px;
+       padding-top: 5px;
    }
    
    .btn_calcular:hover{

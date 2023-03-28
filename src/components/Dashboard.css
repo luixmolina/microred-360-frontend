@@ -108,6 +108,21 @@
         width:auto;
     }
 
+    .container_dashboard {
+        
+        width: auto;
+    }
+
+
+    .caja_bienvenida{
+        width: 350px;
+        margin-top: 0px;
+        left: 50%;
+    }
+
+    .btn{
+        font-size: 17px;
+    }
 }
 
 

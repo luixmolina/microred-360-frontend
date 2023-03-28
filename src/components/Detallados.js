@@ -13,23 +13,23 @@ function Detallados(props) {
         </div>
             <div className="contenedor_detallados" >
                 <div className="caja_respuesta_detallados_1">
-                  <span>Fecha simulada de la interrupción del servicio de energia:</span>
+                  <span>Fecha simulada de la interrupción del servicio de energía:</span>
                   <div className="caja_resultados">
-                  Dia: {props.failure_day} - Mes: {props.failure_month} - Hora: {props.failure_hour}
+                  Día: {props.failure_day} - Mes: {props.failure_month} - Hora: {props.failure_hour}
                   </div><br></br>
-                  <span> Duracion de la falla:</span>
+                  <span> Duración de la operación en isla:</span>
                   <div className="caja_resultados">
                       {props.failure_duration}h
                   </div><br></br>
-                  <span>Consumo del usuario durante las horas de falla [kWh]:</span>
+                  <span>Consumo del usuario durante la operación en isla [kWh]:</span>
                     <div className="caja_resultados">
                         {props.failure_energy}
                     </div><br></br>
-                    <span><div className="kw_texto">Energía importada desde la red electrica principal [kWh/año]:</div></span>
+                    <span><div className="kw_texto">Energía importada desde la red eléctrica principal [kWh/año]:</div></span>
                     <div className="caja_resultados">
                     {props.imported_energy}
                     </div><br></br>
-                    <span>Energía exportada a la red eléctrica principal [kWh]:</span>
+                    <span>Energía exportada a la red eléctrica principal [kWh/año]:</span>
                     <div className="caja_resultados">
                         {props.exported_energy}
                     </div><br></br>
@@ -39,15 +39,15 @@ function Detallados(props) {
                   <div className="caja_resultados">
                       ${props.energy_purchases}
                   </div><br></br>
-                  <span> Ventas de energía a la red eléctrica principal [$/año]:</span>
+                  <span> Venta de energía a la red eléctrica principal [$/año]:</span>
                   <div className="caja_resultados">
                       ${props.energy_sales}
                   </div><br></br>
-                  <span> Costo de inversion del arreglo PV e inversor(es) [$/año]:</span>
+                  <span> Costo de inversión del arreglo PV e inversor(es) [$/año]:</span>
                     <div className="caja_resultados">
                         ${props.pv_and_inverter_cost}
                     </div><br></br>
-                    <span> Costo del banco de baterias [$/año]:</span>
+                    <span> Costo del banco de baterías [$/año]:</span>
                     <div className="caja_resultados">
                         ${props.battery_bank_cost}
                     </div><br></br>
@@ -59,7 +59,7 @@ function Detallados(props) {
             </div>
             <div>
                 <span className='nota'>
-                Nota: La aplicacion web micored360 resuelve un problema de optimizacion para un año completo, a partir del cual determina los flujos de caja de 20 años asumiendo una tasa de descuento del 12% E.A.
+                Nota: La aplicación web MR360 resuelve un problema de optimización para un año completo, a partir del cual determina los flujos de caja de 20 años asumiendo una tasa de descuento del 12% E.A.
                 </span>
             </div>
       </div>

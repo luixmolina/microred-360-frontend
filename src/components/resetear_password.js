@@ -13,7 +13,7 @@ const RecuperarPassword = () => {
    const [password, setPassword] = useState(undefined)
 
    useEffect(() => {
-         fetch("http://localhost:5000/reset-password", {
+         fetch(process.env.REACT_APP_URL_RESET_PASSWORD, {
             method: "POST",
             mode: 'cors',
             headers: {"Content-type": "application/json;charset=UTF-8"},
@@ -37,7 +37,7 @@ const RecuperarPassword = () => {
 
             event.preventDefault();
 
-            const responseRegister = await fetch('http://localhost:5000/cambiar_password', {
+            const responseRegister = await fetch(process.env.REACT_APP_URL_CAMBIAR_PASSWORD, {
                   method: 'POST',
                   headers:{
                        'Content-Type': 'application/json',
