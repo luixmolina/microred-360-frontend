@@ -1,7 +1,7 @@
 import React   from 'react';
 
 const NavLinks = (props) => {
-    return ( 
+    return (
         <ul className="nav-list">
         <li className="nav-list-item" >
             <a href="#microred" className="nav-link" onClick={() => props.isMobile && props.closeMobileMenu()}>Acerda de</a>

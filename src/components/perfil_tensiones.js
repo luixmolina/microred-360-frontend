@@ -5,12 +5,8 @@ import jsPDF, { jsPDFAPI } from 'jspdf';
 import { Navigate } from "react-router-dom";
 import { Line } from 'react-chartjs-2';
 import {useState} from 'react';
-import * as htmlToImage from 'html-to-image';
-import html2pdf from "html2pdf.js";
-import { useReactToPrint } from 'react-to-print';
 import imagenNeplan from './imagenNeplan.png';
-
-
+import useWindowsSize from './windowsSize';
 
 
 const PerfilTensiones = (props) => {
@@ -18,7 +14,9 @@ const PerfilTensiones = (props) => {
     const [goToDashboard, setGoToDashboard] = useState(false);
     const [voltage_profile, setvoltage_profile] = useState([]);
     const labels = props.hour_index;
-    const tamanoMobile= useRef(false);
+    
+    const [tamanoMobile, settamanoMobile] = useState(false);
+    var tamanoMobile2= false;
     const prueba = useRef({
       labels: labels,
       datasets: [
@@ -30,40 +28,42 @@ const PerfilTensiones = (props) => {
       }
       ]
     });
+
     const datosCargados = useRef(false);
 
-   var jsonData = {};
-   var demand_profile = [];
-   var solar_profile = [];
-   var battery_profile = [];
+    var jsonData = {};
+    var demand_profile = [];
+    var solar_profile = [];
+    var battery_profile = [];
 
 
-   for (let i = 0; i <= 47; i++) {
+    for (let i = 0; i <= 47; i++) {
     demand_profile.push(props.demand_profile[i]);
-  }
+    }
 
-  for (let i = 0; i <= 47; i++) {
+    for (let i = 0; i <= 47; i++) {
     solar_profile.push(props.solar_profile[i]);
-  }
+    }
 
-  for (let i = 0; i <= 47; i++) {
+    for (let i = 0; i <= 47; i++) {
     battery_profile.push(props.battery_profile[i]);
-  }
+    }
 
   jsonData["demand_profile"] = demand_profile;
   jsonData["solar_profile"] = solar_profile;
   jsonData["battery_profile"] = battery_profile;
-  console.log(jsonData);
  
 
-    useEffect(() => {
-      console.log(window.screen.width)
-      if(window.screen.width<=700){
+  const size = useWindowsSize();
 
-          tamanoMobile.current = true;
-          console.log("affffff")
-      }
+  useEffect(() => {
 
+    if(size.width < 763){
+        settamanoMobile(true);
+    }
+  }, [size.width])
+
+  useEffect(() => {
 
       fetch(process.env.REACT_APP_URL_CALCULATOR_NEPLAN, {
           method: "POST",
@@ -73,10 +73,9 @@ const PerfilTensiones = (props) => {
           response => response.json()
       ).then(
           data => {
-              
-              console.log(data);
+
               setvoltage_profile(data[0].voltage_profile);
-              console.log("sfdffs")
+
               datosCargados.current =true;
 
               prueba.current = {
@@ -90,29 +89,23 @@ const PerfilTensiones = (props) => {
                 }
                 ]
               }
+        
           }
       )
   }, [])
 
   const [chartData, setChartData] = useState(prueba.current);
   const input = document.getElementById("root");
-  const handlePrint = useReactToPrint({
-    content: () => input,
-  });
 
 
-    
-    
-    
-    
+
     if (goToDashboard) {
         return <Navigate to="/Dashboard"></Navigate>;
     }
-   
-      function downloadPage  ()  {
-       
-      
-      if(window.screen.width>=500){
+
+    function downloadPage  ()  {
+
+      if(window.screen.width>=7630){
         // do sth for desktop browsers
 
         const input = document.getElementById("root");
@@ -125,16 +118,8 @@ const PerfilTensiones = (props) => {
             pdf.save("mr360")
 
         })
+      }
     }
-    else{
-           const data = document.getElementById('root');
-    
-     const input = document.getElementById("root");
-
-  }
-    }
-
-
 
     const options = {
         plugins: {
@@ -168,7 +153,7 @@ const PerfilTensiones = (props) => {
             stacked: true,
           },
         },
-      };
+    };
 
     return (
     <>
@@ -178,7 +163,6 @@ const PerfilTensiones = (props) => {
                 Perfil de tensiones de la microrred en el PCC con el SDL
                 </h1>
             </div>
-            
             <div className="container_graficos3">
             <div className='graficos_neplan'>
             { datosCargados.current ?  <Line options={options} data={prueba.current}></Line> :
@@ -194,12 +178,12 @@ const PerfilTensiones = (props) => {
             </> }
             </div>
             <img  className="imagen_neplan" src={imagenNeplan}  alt=''></img>
-            </div>{console.log(tamanoMobile.current)}
-            <div className="botones">{tamanoMobile.current ? "" :<button className="btn btn_guardar" onClick={downloadPage}>Guardar como</button>}<button className="btn btn_calcular_nuevo"  onClick={() =>{ setGoToDashboard(true)}}>Calcular nuevo diseño</button>
+            </div>
+            <div className="botones">{tamanoMobile ? "" :<button className="btn btn_guardar" onClick={downloadPage}>Guardar como</button>}<button className="btn btn_calcular_nuevo"  onClick={() =>{ setGoToDashboard(true)}}>Calcular nuevo diseño</button>
             </div>
         </div>
     </>
-     );
+  );
 }
 
 export default PerfilTensiones;

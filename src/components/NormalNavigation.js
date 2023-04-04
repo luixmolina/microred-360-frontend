@@ -4,7 +4,6 @@ import React from "react";
 
 const NormalNavigation = () => {
 
-
     return (
         <div className="normalNavigation">
         <NavLinks></NavLinks>

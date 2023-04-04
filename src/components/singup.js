@@ -22,7 +22,6 @@ function SingUp() {
 
         event.preventDefault();
 
-
         if(nombre.length === 0 || correo.length === 0 || telefono.length === 0 || password.length === 0 || politicas === false){
             setError(true);
         } else{
@@ -66,7 +65,6 @@ function SingUp() {
     }
 
     return (
-      
         <>
         <NavbarOutside/>
      <div className="container_singup">
@@ -125,6 +123,6 @@ function SingUp() {
      <Footer2 />
     </>
     )
-  }
-  
+}
+
   export default SingUp

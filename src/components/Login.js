@@ -13,10 +13,11 @@ function Login() {
    const [password, setPassword] = useState('');
    const [mantenerSeccion, setmantenerSeccion] = useState(false);
 
+   // funcion para login
    async function LoginUser(event) {
 
       event.preventDefault();
-
+      
       const responseLogin= await fetch('http://localhost:5000/Login', {
               method: 'POST',
               headers:{
@@ -30,7 +31,7 @@ function Login() {
           })
 
       const data = await responseLogin.json()
-
+         // si se encuentra el usuario, almacena el hash en localstorage
       if(data.user){
 
             localStorage.setItem('token', data.user);

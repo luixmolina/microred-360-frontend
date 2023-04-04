@@ -8,7 +8,6 @@ import Swal from 'sweetalert2';
 import {IoMdCloseCircleOutline} from "react-icons/io";
 
 
-
 function Mapa() {
 
   const [viewState, setViewState] = React.useState({
@@ -29,7 +28,7 @@ function Mapa() {
     keyboard: true,
 
     doubleClickZoom: false
-    });
+  });
 
   const [lngLat, setlngLat] = useState([-76.549480,3.398332]);
   const [radiacion, setRadiacion] = useState('');
@@ -47,12 +46,10 @@ function Mapa() {
                 "month_year": mes_falla.current,
                 "time_day": horaFalla
   };
-  
-  
+
   async function validarFormulario(event) {
 
       event.preventDefault();
-
 
       if(estrato==="" || proveedor === "" || horaFalla === "" || fechaFalla === ""){
             seterror(true);
@@ -62,25 +59,23 @@ function Mapa() {
    function obtenerFechaFalla(valorFecha) {
 
     var parts =valorFecha.split('-');
-    console.log(parts)
     setFechaFalla(valorFecha);
     dia_falla.current = parseInt(parts[2]);
     mes_falla.current = parseInt(parts[1]);
-    console.log(dia_falla.current);
-    console.log(mes_falla.current);
 
-  }
-    
+   }
+
     function handleTouch(evt)  {
 
+      // funcion para resetear el contador de 3 segundos cada vez que el usuario da doble click
       if(typeof timeout === 'number'){
         settimeout('undefined')
         clearTimeout(timeout)
       }
-    
+
       settimeout(setTimeout(function () {
 
-          
+           // fija la longitud y lattitud del ultimo touch por el usuario
             var longitud = parseFloat(evt.lngLat.lng);
             var latitud = parseFloat(evt.lngLat.lat);
             setlngLat([longitud,latitud]);
@@ -93,34 +88,32 @@ function Mapa() {
               method: "POST",
               headers: {"Content-type": "application/json;charset=UTF-8"},
               body: JSON.stringify(datosBackend)
-              
+
             }).then(
               response => response.json()
-            
+
             ).then(
               data => {
                 setRadiacion(data[0].radiation_level);
-                  
-    
+
                   if(data[0].radiation_level === 0){
-    
+
                     Swal.fire({
                       title:'Por favor seleccione un punto en la zona continental de Colombia',
                       confirmButtonText: "Ok",
                       confirmButtonColor: '#4f7df2',
-                   });
+                    });
                   } else{
-          
+                    // muestra la caja del formulario
                     setHideLightbox(false)
-          
+
                     var newViewState ={
                       longitude: longitud-0.00040,
                       latitude: latitud,
                     }
-                 
-          
+
                     setViewState(newViewState)
-          
+                    // desactiva las funciones del mapa
                     setsettings({dragPan: false,
                         dragRotate: false,
                         scrollZoom: false,
@@ -131,7 +124,6 @@ function Mapa() {
                   }
               }
             )
-        
       }, 3000));
 
     }
@@ -151,21 +143,18 @@ function Mapa() {
           "ltd": latitud,
         };
 
-       console.log(datosBackend);
-        console.log(process.env.REACT_APP_URL_CALCULATOR_MAP);
         fetch(process.env.REACT_APP_URL_CALCULATOR_MAP, {
           method: "POST",
           headers: {"Content-type": "application/json;charset=UTF-8"},
           body: JSON.stringify(datosBackend)
 
         }).then(
-            
+
             response => response.json()
 
         ).then(
              data => {
                   setRadiacion(data[0].radiation_level);
-                 
 
                   if(data[0].radiation_level === 0){
 
@@ -175,16 +164,16 @@ function Mapa() {
                       confirmButtonColor: '#4f7df2',
                       });
                   } else{
-      
+                    // muestra la caja de formulario
                     setHideLightbox(false)
-      
+
                     var newViewState ={
                         longitude: longitud-0.00040,
                         latitude: latitud,
                     }
-      
+
                     setViewState(newViewState)
-      
+                    // deshabilitar los controles del mapa
                     setsettings({dragPan: false,
                         dragRotate: false,
                         scrollZoom: false,
@@ -205,16 +194,15 @@ function Mapa() {
 
 
     function ocultarFormulario(){
-  setHideLightbox(true)
-  setsettings({dragPan: true,
-    dragRotate: true,
-    scrollZoom: true,
-    touchZoom: true,
-    touchRotate: true,
-    keyboard: true,})
+        setHideLightbox(true)
+        setsettings({dragPan: true,
+        dragRotate: true,
+        scrollZoom: true,
+        touchZoom: true,
+        touchRotate: true,
+        keyboard: true,})
     }
 
-  
 
     return (
         <div id="mapa_container">
@@ -229,7 +217,7 @@ function Mapa() {
     <Marker latitude={lngLat[1]} longitude={lngLat[0]}  pitchAlignment='viewport'   >
       <img src="https://mr360bucket.s3.amazonaws.com/mr360_images/marker_image.png" alt=""></img>
     </Marker>
-    
+
     </Map>
      <div className={` ${hideLightbox ? "form_mapa" : ""}`}>
      <div className="  container_formulario">
@@ -274,9 +262,8 @@ function Mapa() {
                   <div className='cajaFecha'>
                   <span> Fecha de interrupción del servicio de energía:</span>
                   <input type="date" id="fechaFalla"
-                    
                     min="2023-01-01" max="2023-12-31"  onChange={ev => obtenerFechaFalla(ev.target.value)}></input>
-                     {error&&fechaFalla.length<=0?
+                    {error&&fechaFalla.length<=0?
                             <label className="error_formulario">Por favor seleccione la fecha de la falla</label>:""}
                     <br></br>
                     <span>Hora de interrupción del servicio de energía:</span>
@@ -322,8 +309,6 @@ function Mapa() {
     </div>
         </div>
      </div>
-
-     
         </div>
     )
 }

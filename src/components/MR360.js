@@ -14,7 +14,6 @@ function MR360() {
     const [backendData, setBackendData] = useState(undefined)
 
     let { state } = useLocation();
-   console.log(state.datos);
 
     useEffect(() => {
         fetch(process.env.REACT_APP_URL_CALCULATOR_MR360, {
@@ -27,7 +26,6 @@ function MR360() {
         ).then(
             data => {
                 setBackendData(data)
-                console.log(data);
             }
         )
     }, [])
@@ -45,7 +43,8 @@ function MR360() {
                     <div id="container_resultados" className="container_resultados">
                     <Resumen energy_saving={backendData[0].energy_saving} economic_saving={backendData[0].economic_saving} environmental_saving={backendData[0].environmental_saving} 
                     battery_bank_power={backendData[1].battery_bank_power} inverter_type={backendData[1].inverter_type} pv_power={backendData[1].pv_power}
-                    charger_inverter_power={backendData[1].charger_inverter_power}></Resumen>
+                    charger_inverter_power={backendData[1].charger_inverter_power}>
+                    </Resumen>
                     <Detallados failure_day={backendData[2].failure_day}
                      failure_month={backendData[2].failure_month}
                      failure_hour={backendData[2].failure_hour}
@@ -57,9 +56,10 @@ function MR360() {
                      pv_and_inverter_cost={backendData[3].pv_and_inverter_cost}
                      battery_bank_cost={backendData[3].battery_bank_cost}
                      investment_cost={backendData[3].investment_cost}
-                     exported_energy={backendData[3].exported_energy}></Detallados>
+                     exported_energy={backendData[3].exported_energy}>
+                     </Detallados>
                     </div>
-                    <Graficos imported_energy_profile={backendData[4].imported_energy_profile} 
+                    <Graficos imported_energy_profile={backendData[4].imported_energy_profile}
                       exported_energy_profile={backendData[4].exported_energy_profile}
                       solar_profile={backendData[4].solar_profile}
                       charge_battery_profile={backendData[4].charge_battery_profile}
@@ -67,9 +67,8 @@ function MR360() {
                       demand_profile={backendData[4].demand_profile}
                       hour_index={backendData[4].hour_index}
                       battery_energy={backendData[4].battery_energy}>
-                      
                     </Graficos>
-                     <PerfilTensiones demand_profile={backendData[4].demand_profile } solar_profile={backendData[4].solar_profile } battery_profile={backendData[4].battery_profile }  hour_index={backendData[4].hour_index}  /> 
+                     <PerfilTensiones demand_profile={backendData[4].demand_profile } solar_profile={backendData[4].solar_profile } battery_profile={backendData[4].battery_profile }  hour_index={backendData[4].hour_index}  />
                     <Footer />
                     </>
                  )}

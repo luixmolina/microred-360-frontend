@@ -8,7 +8,7 @@ import InterpretacionGraficos from './InterpretacionGraficos.pdf';
 
 const Resumen = (props) => {
       var imagen;
-      if(props.inverter_type == "Ongrid e inversor cargador"){
+      if(props.inverter_type === "Ongrid e inversor cargador"){
           imagen = inversor_cargador;
       } else{
           imagen = hibrido;
@@ -17,15 +17,10 @@ const Resumen = (props) => {
       return (
           <>
             <div className="tarjeta_principal">
-            
             <div className="tarjeta_imagen">
-           
             <div className="encabezado_imagen">
-            
             <h1>Tu diseño de microred</h1>
             </div>
-           
-            
             <img src={imagen} className="imagenes img_shadown" width="520" height="620" alt="" /> 
             <div className="nota2">
             <a href={InterpretacionGraficos} rel="noreferrer" target="_blank" className="interpretacion_graficos">Click aquí para la intepretación de los resultados.</a>
@@ -90,7 +85,7 @@ const Resumen = (props) => {
         </div>
       </div>
     </>
-     );
+    );
 }
 
 export default Resumen;

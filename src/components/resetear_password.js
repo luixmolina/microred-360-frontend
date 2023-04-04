@@ -22,7 +22,6 @@ const RecuperarPassword = () => {
             response => response.json()
          ).then(
             data => {
-            
                if(data.status === "Error"){
                   window.location.href = '/login'
                } else{
@@ -51,7 +50,7 @@ const RecuperarPassword = () => {
             })
 
             const data = await responseRegister.json()
-           
+
             if(data.status == 'success'){
 
                   Swal.fire({
@@ -67,7 +66,7 @@ const RecuperarPassword = () => {
       }
 
     return (
-    <>    
+    <>
     <NavbarOutside/>
  <div className="  container_recuperar">
    <div className="imagen_recuperar">
@@ -88,14 +87,13 @@ const RecuperarPassword = () => {
                <button className="btn">Resetear contraseña</button><br></br>
             </div>
             </form>
-            
          </div>
       </div>
    </div>
    </div>
    <Footer2 />
-    </>
-     );
+   </>
+   );
 }
 
 export default RecuperarPassword;

@@ -5,8 +5,7 @@ import './NavbarInside.css';
 
 const NavbarOutside = () => {
 
-
-    return ( 
+    return (
         <nav className="main-navigation2">
         <div className="navbar-header animated fadeInUp">
         <a className="navbar-brand" href="/#"><Link to="/" className="navbar-logo">
@@ -15,7 +14,7 @@ const NavbarOutside = () => {
         </a>
         </div>
         </nav>
-     );
+    );
 }
 
 export default NavbarOutside;

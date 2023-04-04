@@ -8,11 +8,11 @@ import Swal from 'sweetalert2'
 const RecuperarPassword = () => {
 
    const [correo, setCorreo] = useState(undefined)
-   
+
    async function recuperarContrasena(event) {
-         
+
       event.preventDefault();
-      
+
       const responseRegister = await fetch(process.env.REACT_APP_URL_FORGOT_PASSWORD, {
               method: 'POST',
               headers:{
@@ -24,7 +24,7 @@ const RecuperarPassword = () => {
       })
 
       const data = await responseRegister.json()
-     
+
       if(data.status === "success"){
               Swal.fire({
                title: 'Enviamos a tu correo electrónico un link de cambio de clave con el que podrás finalizar el proceso de recuperación de tu cuenta.',
@@ -39,7 +39,6 @@ const RecuperarPassword = () => {
             });
       }
    }
-
 
     return (
     <>

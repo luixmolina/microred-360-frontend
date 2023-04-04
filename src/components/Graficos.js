@@ -9,15 +9,7 @@ import './graficos.css';
 function Graficos(props) {
 
     const labels = props.hour_index;
-
-    // for (let i = 0; i < 48; i++) {
-    //     labels.push(i+"h");
-    // }
-    
-
-    
-
-    console.log(props.hour_index);
+    // configuracion del primer grafico
     const options = {
     plugins: {
       title: {
@@ -65,7 +57,7 @@ function Graficos(props) {
     },
     };
 
-
+    // configuracion del segundo grafico
     const options2 = {
       
     plugins: {
@@ -116,6 +108,7 @@ function Graficos(props) {
     
     };
 
+    // data set del primer grafico
     const [chartData, setChartData] = useState({
         labels: labels,
     datasets: [
@@ -184,6 +177,7 @@ function Graficos(props) {
     ]
     });
 
+    // data set del segundo grafico
     const [chartData2, setChartData2] = useState({
         labels: labels,
     datasets: [

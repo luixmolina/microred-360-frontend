@@ -12,7 +12,7 @@ const MobileNavigation = () => {
 
     const hamburgerIcon =  <SlMenu className="Hamburger" size='40px'
     onClick={() => setOpen(!open)}></SlMenu>
-     
+
      const closeIcon =  <CgCloseO className="Hamburger" size='40px'
      onClick={() => setOpen(!open)}></CgCloseO>
 
@@ -21,7 +21,7 @@ const MobileNavigation = () => {
         {open ? closeIcon  : hamburgerIcon}
         {open && <NavLinks isMobile={true} closeMobileMenu={closeMobileMenu} />}
         </div>
-     );
+    );
 }
 
 export default MobileNavigation;
