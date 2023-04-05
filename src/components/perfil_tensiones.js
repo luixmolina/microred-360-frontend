@@ -105,7 +105,7 @@ const PerfilTensiones = (props) => {
 
     function downloadPage  ()  {
 
-      if(window.screen.width>=7630){
+      if(window.screen.width>=763){
         // do sth for desktop browsers
 
         const input = document.getElementById("root");
