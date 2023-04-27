@@ -80,7 +80,11 @@ p.parrafo_microred {
   }
 
 
-
+.logomr360{
+    position: absolute;
+    margin-left: -420px;
+    padding-top: 200px;
+}
 
 .flex-container{
     padding-top: 40px;
@@ -211,17 +215,18 @@ h4{
 
 
 
-
-  
-  /* Tablets y pantallas más pequeñas */
-
-  @media(max-width: 1037px) {
-    .como_usar {
+@media(max-width: 768px) {
+    .grid_patrocinadores {
         display: flex;
         flex-direction: column;
+        align-items: center;
         height: auto;
     }
 }
+  
+  /* Tablets y pantallas más pequeñas */
+
+
 
 @media(max-width: 768px) {
     .como_usar {

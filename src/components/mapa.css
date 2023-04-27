@@ -139,6 +139,12 @@ input[type="date"], textarea {
 
 
 @media(max-width: 768px) {
+  .caja_form{
+    margin-top: 80px;
+  }
+
+
+
   .contenido_usu {
       
     width: auto;
@@ -184,7 +190,9 @@ left: 37%;
   .contenido_usu {
       width: auto;
   }
-
+  .caja_form{
+    margin-top: 135px;
+  }
   .titulo {
     padding-left: 35px;
   }

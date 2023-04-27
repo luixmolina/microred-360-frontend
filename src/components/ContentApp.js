@@ -35,7 +35,7 @@ if (goToLogin) {
                     </div>
                 </div>
         <div className='imagen_microrred'>
-        <img src="https://mr360bucket.s3.amazonaws.com/mr360_images/img1.png" className="imagenes img_shadown" width="520" height="340"alt=""></img>
+        <img src="https://mr360bucket.s3.amazonaws.com/mr360Logo2.png" className="imagenes img_shadown" width="520" height="340"alt=""></img>
     </div>
     </div>
     </div>

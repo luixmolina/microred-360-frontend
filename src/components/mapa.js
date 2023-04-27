@@ -1,12 +1,12 @@
 import React , {useEffect, useState,useRef} from 'react';
-import Map, {Marker} from 'react-map-gl';
+import Map, {Marker, GeolocateControl} from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './mapa.css';
 import './Form.css';
 import { Link} from 'react-router-dom';
 import Swal from 'sweetalert2';
 import {IoMdCloseCircleOutline} from "react-icons/io";
-
+import NavbarInside from './NavbarInside';
 
 function Mapa() {
 
@@ -204,19 +204,24 @@ function Mapa() {
     }
 
 
-    return (
+    return (<>
+       <NavbarInside/>
+    
         <div id="mapa_container">
     <Map
     {...viewState}
     onMove={moverMapa}
     style={{width: '100vw', height: '100vh'}}
     mapStyle="mapbox://styles/mapbox/outdoors-v12"
-    mapboxAccessToken= {process.env.REACT_APP_KEY_MAPBOX} 
+    mapboxAccessToken= {process.env.REACT_APP_KEY_MAPBOX}
+    
     onDblClick={handleClick} onTouchEnd={handleTouch} {...settings} >
-
-    <Marker latitude={lngLat[1]} longitude={lngLat[0]}  pitchAlignment='viewport'   >
+    
+    {  lngLat[0] === -76.549480 ?  "":  <Marker latitude={lngLat[1]} longitude={lngLat[0]}  pitchAlignment='viewport'   >
       <img src="https://mr360bucket.s3.amazonaws.com/mr360_images/marker_image.png" alt=""></img>
-    </Marker>
+    </Marker> }
+  
+
 
     </Map>
      <div className={` ${hideLightbox ? "form_mapa" : ""}`}>
@@ -310,6 +315,7 @@ function Mapa() {
         </div>
      </div>
         </div>
+        </>
     )
 }
 

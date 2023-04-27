@@ -99,6 +99,24 @@
 
    
 
+   @media(min-width: 1038px) {
+    .imagen_dashboard{
+
+       
+        height:800px;
+   width:2500px;
+        
+    
+    }
+
+    .container_dashboard {
+
+        width: auto;
+    }
+    
+
+}
+
    @media(max-width: 768px) {
     .tarjeta_graficos {
         display: flex;

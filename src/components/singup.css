@@ -156,6 +156,27 @@ textarea:focus, input:focus {
 }
 
 
+
+
+@media(min-width: 1038px) {
+    .imagen_singup{
+
+       
+        height:800px;
+   width:2500px;
+        
+    
+    }
+
+    .container_singup {
+
+        width: auto;
+    }
+    
+
+}
+
+
    @media(max-width: 768px) {
     .container_singup {
         

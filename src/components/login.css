@@ -151,6 +151,24 @@ input{
     font-size: 26px;
 }
 
+@media(min-width: 1038px) {
+    .imagen_login{
+
+       
+        height:800px;
+   width:2500px;
+        
+    
+    }
+
+    .container_login {
+
+        width: auto;
+    }
+    
+
+}
+
 
 @media(max-width: 768px) {
     .container_login {
