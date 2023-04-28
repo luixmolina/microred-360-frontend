@@ -41,7 +41,7 @@ if (goToLogin) {
     </div>
     <div id="como_usar" className="como_usar">
             <div className="como_usar_imagen">
-             <img src="https://mr360bucket.s3.amazonaws.com/formulario.png" className="imagenes " alt="" width="500" height="300"></img>
+             <img src="https://mr360bucket.s3.amazonaws.com/formulario.png" className="imagenes " alt="" width="800" height="500"></img>
             </div>
         <div className="texto_como_usar"> <h1 >&iquest;C&oacute;mo usar?</h1>
             <p><span >Para conocer los resultados que entrega la herramienta Microrred 360, es necesario:</span></p>

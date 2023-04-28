@@ -53,7 +53,7 @@ const PerfilTensiones = (props) => {
   jsonData["solar_profile"] = solar_profile;
   jsonData["battery_profile"] = battery_profile;
  
-
+  
   const size = useWindowsSize();
 
   useEffect(() => {
@@ -68,7 +68,8 @@ const PerfilTensiones = (props) => {
       fetch(process.env.REACT_APP_URL_CALCULATOR_NEPLAN, {
           method: "POST",
           headers: {"Content-type": "application/json;charset=UTF-8"},
-          body: JSON.stringify(jsonData)
+          body: JSON.stringify(jsonData),
+          timeout: 700000 // in milliseconds
       }).then(
           response => response.json()
       ).then(

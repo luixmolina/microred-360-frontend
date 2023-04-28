@@ -205,7 +205,7 @@ function Graficos(props) {
             <div className="horaFalla2">Hora de falla 2</div>
             <div className="notaHora">Hora del día</div>
         </div>
-        <div className="nota4">Nota: Para la interpretación del anterior grafico, tenga en cuenta que las barras se sobreponen.</div>
+        <div className="nota4">Nota: Para la interpretación del anterior gráfico, tenga en cuenta que las barras se sobreponen.</div>
       <div className="container_graficos2">
           <Bar options={options2} data={chartData2}  ></Bar>
           <div className="notaHora2">Hora del día</div>

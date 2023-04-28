@@ -19,7 +19,7 @@ const Resumen = (props) => {
             <div className="tarjeta_principal">
             <div className="tarjeta_imagen">
             <div className="encabezado_imagen">
-            <h1>Tu diseño de microred</h1>
+            <h1>Tu diseño de microrred</h1>
             </div>
             <img src={imagen} className="imagenes img_shadown" width="520" height="620" alt="" /> 
             <div className="nota2">
@@ -44,7 +44,7 @@ const Resumen = (props) => {
                     <div className="caja_resultados">
                         <span> {props.economic_saving} </span>
                     </div> <br></br>
-                 <span>Ahorro ambiental [kg/año]:</span>
+                 <span>Ahorro ambiental [kgCO2/año]:</span>
                     <br></br>
                     <div className="caja_resultados">
                         <span> {props.environmental_saving} </span>

@@ -28,7 +28,7 @@ function Dashboard() {
                 <span>Microrred 360 está en la capacidad de suministrar
                     los tamaños y los tipos de activos que integran las microrredes diseñadas con la aplicación. Asimismo,
                     el usuario podrá conocer los beneficios técnicos,
-                    economicos y ambientales que podría obtener tras implementar la solución de Microrred 360.
+                    económicos y ambientales que podría obtener tras implementar la solución de Microrred 360.
                 </span><br></br><br></br>
                 <span>Para continuar, seleccione un punto dentro de Colombia mediante doble click.</span>
                 <div className="calcula_microrred">
