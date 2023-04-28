@@ -128,6 +128,24 @@ position: relative;
 animation: auto-progress 240s infinite linear;
 }
 
+@media(min-width: 1038px) {
+  .imagen_background_cargando{
+
+
+      height:800px;
+      width:2500px;
+
+  }
+
+  .container_cargando {
+
+      width: auto;
+  }
+  
+
+}
+
+
 
 @media(max-width: 768px) {
   .container_cargando {
