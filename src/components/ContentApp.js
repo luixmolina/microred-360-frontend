@@ -41,7 +41,7 @@ if (goToLogin) {
     </div>
     <div id="como_usar" className="como_usar">
             <div className="como_usar_imagen">
-             <img src="https://mr360bucket.s3.amazonaws.com/formulario.png" className="imagenes " alt="" width="800" height="500"></img>
+             <img src="https://mr360bucket.s3.amazonaws.com/formulario.png" className="imagenes " alt="" width="550" height="300"></img>
             </div>
         <div className="texto_como_usar"> <h1 >&iquest;C&oacute;mo usar?</h1>
             <p><span >Para conocer los resultados que entrega la herramienta Microrred 360, es necesario:</span></p>
@@ -91,7 +91,7 @@ if (goToLogin) {
         <div className="patrocinadores2">
             <div className="grid_patrocinadores">
                 <div>
-                    <img className="convocatoria" src="https://mr360bucket.s3.amazonaws.com/Convocatoria.jpg" alt=""  ></img>
+                    <img className="convocatoria" src="https://mr360bucket.s3.amazonaws.com/convocatoria.png" alt=""  ></img>
                 </div>
                 <div>
                     <img className="ganadores" src="https://mr360bucket.s3.amazonaws.com/mr360_images/Ganadores.jpg" alt="" ></img>
