@@ -5,13 +5,13 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 
 
-function ContentApp() {
+function ContentAppD() {
 
 const [goToLogin, setGoToLogin] = React.useState(false);
 
 
 if (goToLogin) {
-    return <Navigate to="/Login"></Navigate>;
+    return <Navigate to="/d/Login"></Navigate>;
 }
 
   return (
@@ -103,4 +103,4 @@ de alta confiabilidad para el usuario final.</p>
   )
 }
 
-export default ContentApp
+export default ContentAppD

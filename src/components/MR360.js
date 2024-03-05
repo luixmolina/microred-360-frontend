@@ -14,9 +14,29 @@ function MR360() {
     const [backendData, setBackendData] = useState(undefined)
 
     let { state } = useLocation();
+    function getResults() {
+        let usuario = {
+            "id_user": localStorage.getItem("id_user"),
+        }
+        fetch(process.env.REACT_APP_URL_RESULTS, {
+            method: "POST",
+            mode: 'cors',
+            headers: {"Content-type": "application/json;charset=UTF-8"},
+            body: JSON.stringify(usuario)
+        }).then(
+            response => response.json()
+        ).then(
+            data => {
+                setBackendData(data)
+                console.log(data);
+            }
+        )
+      
+    }
 
     useEffect(() => {
-        fetch(process.env.REACT_APP_URL_CALCULATOR_MR360, {
+
+        fetch(process.env.REACT_APP_URL_CALCULATOR, {
             method: "POST",
             mode: 'cors',
             headers: {"Content-type": "application/json;charset=UTF-8"},
@@ -26,8 +46,10 @@ function MR360() {
         ).then(
             data => {
                 setBackendData(data)
+               
             }
         )
+        setTimeout(getResults, 420000);
     }, [])
 
     return(

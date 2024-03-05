@@ -133,6 +133,15 @@
         margin-left: 150px;
       }
 
+
+
+.aviso{
+  padding-right: 50px;
+  margin: 10px;
+  padding-left: 50px;
+  text-align: center;
+}
+
       .stripes2 {
         background-size: 30px 30px;
         background-image: linear-gradient(
@@ -148,11 +157,11 @@
       }
 
       .stripes2.animated {
-      animation: animate-stripes 240.0s linear infinite;
+      animation: animate-stripes 242.0s linear infinite;
       }
 
       .stripes2.animated.slower {
-      animation-duration: 240.0s;
+      animation-duration: 242.0s;
       }
 
 
@@ -164,7 +173,7 @@
       border-radius: 3px;
       box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
       position: relative;
-      animation: auto-progress 240s infinite linear;
+      animation: auto-progress 242s infinite linear;
       }
 
 

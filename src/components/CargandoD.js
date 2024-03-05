@@ -1,8 +1,8 @@
 import React from 'react';
-import './Cargando.css';
+import './CargandoD.css';
 
 
-function Cargando() {
+function CargandoD() {
 
   return (
    <>
@@ -14,7 +14,7 @@ function Cargando() {
             <div className="texto_cargando">
              <span className='titulo_cargando'>MICRORRED 360 CALCULANDO</span>
                 <br></br>
-                <div className='nota3'>(Tiempo estimado: 7 minutos)</div>
+              
             </div>
             <div className="progress-bar-container">
     <div className="progress-bar stripes">
@@ -27,4 +27,4 @@ function Cargando() {
   )
 }
 
-export default Cargando
+export default CargandoD

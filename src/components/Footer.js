@@ -21,7 +21,7 @@ function Footer() {
     <h4>Oficina principal</h4>
     <div> Calle 3A # 65-118</div>
     <div>602 489 700</div>
-    <div>gers@gers.com.co</div>
+    <div>gers@gers.com</div>
     <div>Cali - Colombia</div>
 </div>
 <div className="redes">

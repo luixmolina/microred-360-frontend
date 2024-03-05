@@ -7,7 +7,7 @@ import {HiOutlineLockClosed } from "react-icons/hi";
 import Swal from 'sweetalert2';
 
 
-function Login() {
+function LoginD() {
 
    const [correo, setCorreo] = useState('');
    const [password, setPassword] = useState('');
@@ -38,7 +38,7 @@ function Login() {
             localStorage.setItem('id_user', data.id_user);
            
             
-            window.location.href = '/Dashboard'
+            window.location.href = '/d/Dashboard'
 
       } else{
 
@@ -90,4 +90,4 @@ function Login() {
 )
 }
 
-export default Login
+export default LoginD

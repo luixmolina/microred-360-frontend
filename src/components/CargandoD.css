@@ -109,11 +109,11 @@
 }
 
 .stripes.animated {
-animation: animate-stripes 421.0s linear infinite;
+animation: animate-stripes 10.0s linear infinite;
 }
 
 .stripes.animated.slower {
-animation-duration: 421.0s;
+animation-duration: 10.0s;
 }
 
 
@@ -125,7 +125,7 @@ background-color: #34c2e3;
 border-radius: 3px;
 box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
 position: relative;
-animation: auto-progress 421s infinite linear;
+animation: auto-progress 10s infinite linear;
 }
 
 @media(min-width: 1038px) {

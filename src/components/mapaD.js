@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import NavbarInside from './NavbarInside';
 
-function Mapa() {
+function MapaD() {
 
   const [viewState, setViewState] = React.useState({
     longitude: -76.52199013345891,
@@ -328,4 +328,4 @@ function Mapa() {
   )
 }
 
-export default Mapa
+export default MapaD
