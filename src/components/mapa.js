@@ -39,15 +39,14 @@ function Mapa() {
   const [fechaFalla, setFechaFalla] = useState('');
   const [timeout, settimeout] = useState('undefined');
   const [proveedor, setProveedor] = useState('');
-  
   var datos = {
     "radiation_level": radiacion,
     "economic_level": estrato,
     "energy_company": proveedor,
     "day_month": dia_falla.current,
     "month_year": mes_falla.current,
-    "time_day": horaFalla,
-    "id_user": localStorage.getItem("id_user")
+      "time_day": horaFalla,
+      "id_user": localStorage.getItem("id_user")
   };
 
   async function validarFormulario(event) {
@@ -111,7 +110,7 @@ function Mapa() {
             setHideLightbox(false)
 
             var newViewState = {
-              longitude: longitud - 0.00040,
+              longitude: longitud - 0.0004,
               latitude: latitud,
             }
 
@@ -173,7 +172,7 @@ function Mapa() {
             setHideLightbox(false)
 
             var newViewState = {
-              longitude: longitud - 0.00040,
+              longitude: longitud - 0.0004,
               latitude: latitud,
             }
 
@@ -274,13 +273,13 @@ function Mapa() {
                     <label className="error_formulario">Por favor seleccione el proveedor de energía</label> : ""}
                   <br></br> <br></br>
                   <div className='cajaFecha'>
-                    <span>Fecha de indisponibilidad del servicio de energía:</span>
+                    <span> Fecha de interrupción del servicio de energía:</span>
                     <input type="date" id="fechaFalla"
-                      min="2023-01-01" max="2023-12-30" onChange={ev => obtenerFechaFalla(ev.target.value)}></input>
+                      min="2024-01-01" max="2024-12-30" onChange={ev => obtenerFechaFalla(ev.target.value)}></input>
                     {error && fechaFalla.length <= 0 ?
                       <label className="error_formulario">Por favor seleccione la fecha de la falla</label> : ""}
                     <br></br>
-                    <span>Hora de indisponibilidad del servicio de energía:</span>
+                    <span>Hora de interrupción del servicio de energía:</span>
                     <select name="horaFalla" id="horaFalla" onChange={ev => setHoraFalla(parseInt(ev.target.value))}>
                       <option value=""></option>
                       <option value="0">0:00</option>
