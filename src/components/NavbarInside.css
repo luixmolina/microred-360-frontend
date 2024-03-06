@@ -1,0 +1,48 @@
+
+.main-navigation2 {
+    background-color:#ffffff;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+header {
+
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+a.navbar-brand {
+    float: left;
+    height: 35px;
+    padding: 15px 15px;
+    line-height: 20px;
+
+}
+
+.cerrar_ul {
+    display: inline-block;
+    line-height: 40px;
+    margin-left: 30px;
+    margin-top: 15px;
+    list-style: none;
+}
+
+.cerrar_li{
+    float: right;
+}
+
+a.nav-link-cerrar {
+    text-decoration: none;
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    color: #000000;
+    margin-right: 0px;
+    margin-left: auto;
+    padding-right: 10px;
+}

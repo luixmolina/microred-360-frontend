@@ -1,0 +1,278 @@
+.tarjeta_neplan {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:10px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+
+.encabezado_neplan {
+    background-color:#4f7df2;
+    color: #ffffff;
+
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px ;
+    width: 1262px;
+}
+
+
+.encabezado_neplan h1 {
+
+    margin-bottom: 0px;
+}
+
+
+
+.container_graficos3 {
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+    justify-content:space-evenly;
+    width: 1000px;
+    margin: auto;
+    background-color: #fff;
+}
+
+.botones{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.btn_guardar{
+    width: 150px;
+    font-family: 'Montserrat', sans-serif;
+   font-weight: bold;
+   font-size: 20px;
+   text-align: center;
+   vertical-align: middle;
+   color: #fff;
+   background-color: #4f7df2;
+   padding: 10px ;
+   border: none;
+   box-shadow: rgb(61, 61, 61) 2px 4px 12px -3px;
+   border-radius: 14px;
+   transition : 1000ms;
+   cursor: pointer;
+   }
+
+
+   .btn_calcular_nuevo{
+    width: 250px;
+    margin-left: 30px;
+   }
+
+   .btn_guardar{
+    width: 200px;
+    margin-left: 30px;
+   }
+
+   .btn:hover{
+    transition : 1000ms;
+    background-color: #fff;
+    color: #0066cc;
+    }
+
+
+    .imagen_neplan{
+
+        width: 250px;
+        padding-left: 250px;
+    }
+
+    .graficos_neplan{
+        padding-right: 50px;
+        width: 700px;
+
+    }
+
+
+
+    @keyframes animate-stripes {
+        0% {
+            background-position: 0 0;
+        }
+
+        100% {
+            background-position: 60px 0;
+        }
+      }
+
+      @keyframes auto-progress {
+      0% {
+        width: 0%;
+      }
+
+      100% {
+        width: 100%;
+      }
+      }
+
+      .calculandoNeplan{
+        font-size: 30px;
+        margin-left:-100px;
+      }
+
+      .calculandoTiempo{
+        font-size: 20px;
+        margin-left:-100px;
+      }
+      .progress-bar2 {
+        background-color: #1a1a1a;
+        height: 35px;
+        width: 300px;
+        margin: 50px auto;
+        border-radius: 5px;
+        box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+        margin-top: 20px;
+        margin-left: 150px;
+      }
+
+
+
+.aviso{
+  padding-right: 50px;
+  margin: 10px;
+  padding-left: 50px;
+  text-align: center;
+}
+
+      .stripes2 {
+        background-size: 30px 30px;
+        background-image: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, .15) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, .15) 50%,
+            rgba(255, 255, 255, .15) 75%,
+            transparent 75%,
+            transparent
+        );
+      }
+
+      .stripes2.animated {
+      animation: animate-stripes 242.0s linear infinite;
+      }
+
+      .stripes2.animated.slower {
+      animation-duration: 242.0s;
+      }
+
+
+      .progress-bar-inner2 {
+      display: block;
+      height: 35px;
+      width: 0%;
+      background-color: #34c2e3;
+      border-radius: 3px;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+      position: relative;
+      animation: auto-progress 242s infinite linear;
+      }
+
+
+
+
+
+   @media(max-width: 768px) {
+    .container_graficos3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width:562px;
+    }
+
+    .graficos_neplan{
+      padding-right: 50px;
+      width: 600px;
+
+  }
+  .imagen_neplan{
+    padding-left: 0px;
+  }
+
+  .progress-bar2 {
+
+    margin-left: 100px;
+  }
+
+}
+
+
+
+@media(max-width: 500px) {
+    .container_graficos3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width:314px;
+    }
+
+
+    .caja_bienvenida{
+        width: 350px;
+        margin-top: 0px;
+        left: 50%;
+    }
+
+    .btn{
+        font-size: 17px;
+    }
+
+
+    .btn_calcular_nuevo{
+        
+        margin-top: 30px;
+       }
+
+       .container_graficos3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width:314px;
+    }
+
+    .graficos_neplan{
+        width:314px;
+    }
+
+    .imagen_neplan{
+        width:314px;
+        padding-left: 0px;
+    }
+
+    .calculandoNeplan{
+        font-size: 30px;
+        margin-left:0px;
+      }
+
+      .calculandoTiempo{
+        font-size: 20px;
+        margin-left:0px;
+      }
+
+      .progress-bar2 {
+        background-color: #1a1a1a;
+        height: 35px;
+        width: 300px;
+        margin: 50px auto;
+        border-radius: 5px;
+        box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+        margin-top: 20px;
+        margin-left: 10px;
+      }
+
+      .root{
+        overflow: visible !important;
+      }
+
+}

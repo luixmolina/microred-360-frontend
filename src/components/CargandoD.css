@@ -1,0 +1,175 @@
+.container_cargando{
+    position: relative; 
+    height:800px;
+    width:1350px;
+}
+
+.imagen_background_cargando{
+    background-image: url("https://mr360bucket.s3.amazonaws.com/mr360_images/colombia_mapa.png");
+    background-repeat:no-repeat;
+    background-size: 100%;
+    height:800px;
+    width:1500px;
+    position: absolute;
+    z-index: 1;
+    filter: blur(2px);
+}
+
+
+.imagen_cargando{
+    background-image: url("https://mr360bucket.s3.amazonaws.com/mr360_images/imagen_cargando.png");
+    background-repeat:no-repeat;
+    background-size: 80%;
+    height:320px;
+    width:400px;
+  position: absolute;
+    z-index: 2;
+}
+
+
+.nota3{
+  font-size: 24px;
+}
+
+.titulo_cargando{
+  font-size: 30px;
+  word-spacing: 5px;
+}
+
+ .caja_cargando{
+    position: absolute;
+    z-index: 2;
+    left: 55%;
+    top: 30%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    margin-top: 150px;
+    align-items: center;
+}
+
+
+.texto_cargando {
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 300px;
+    margin-left: -70px;
+    position: absolute;
+    z-index: 3;
+}
+
+
+
+@keyframes animate-stripes {
+  0% {
+      background-position: 0 0;
+  }
+
+  100% {
+      background-position: 60px 0;
+  }
+}
+
+@keyframes auto-progress {
+0% {
+  width: 0%;
+}
+
+100% {
+  width: 100%;
+}
+}
+
+.progress-bar {
+  background-color: #1a1a1a;
+  height: 35px;
+  width: 350px;
+  margin: 50px auto;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+  margin-top: 430px;
+  margin-left: -90px;
+}
+
+.stripes {
+  background-size: 30px 30px;
+  background-image: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, .15) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, .15) 50%,
+      rgba(255, 255, 255, .15) 75%,
+      transparent 75%,
+      transparent
+  );
+}
+
+.stripes.animated {
+animation: animate-stripes 10.0s linear infinite;
+}
+
+.stripes.animated.slower {
+animation-duration: 10.0s;
+}
+
+
+.progress-bar-inner {
+display: block;
+height: 35px;
+width: 0%;
+background-color: #34c2e3;
+border-radius: 3px;
+box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+position: relative;
+animation: auto-progress 10s infinite linear;
+}
+
+@media(min-width: 1038px) {
+  .imagen_background_cargando{
+
+
+      height:800px;
+      width:2500px;
+
+  }
+
+  .container_cargando {
+
+      width: auto;
+  }
+  
+
+}
+
+
+
+@media(max-width: 768px) {
+  .container_cargando {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+      width:auto;
+  }
+
+
+.caja_cargando{
+    margin-top: 350px;
+    left: 63%;
+}
+}
+
+@media(max-width: 500px) {
+  .container_cargando {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width:auto;
+}
+
+}

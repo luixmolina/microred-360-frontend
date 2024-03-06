@@ -1,0 +1,380 @@
+
+
+.tarjeta_principal {
+    font-family: 'Montserrat', sans-serif;
+   
+    background-color:#c9e4ff;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 2em;
+    align-items: start;
+    align-content: center;
+    padding-bottom: 85px;
+    padding-top: 20px;
+}
+
+.encabezado {
+    background-color:#4f7df2;
+    color: #ffffff;
+    margin-bottom: -21px;
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px ;
+}
+
+
+
+.encabezado_resumen {
+    background-color:#4f7df2;
+    color: #ffffff;
+    margin-bottom: -21px;
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px ;
+}
+
+.encabezado_imagen {
+    background-color:#4f7df2;
+    color: #ffffff;
+    margin-bottom: -21px;
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px ;
+    width: 520px;
+}
+
+.tarjeta_imagen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.caja_datos {
+    background-color: #ffffff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+
+.tarjeta_resultados {
+
+    display: grid;
+    grid-template-rows: 50% 50%;
+    gap: 2em;
+    padding-right: 30px;
+}
+
+/* .tarjeta_resumen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+} */
+
+h1{
+    text-align: center;
+    margin-top: 0px;
+}
+
+.caja_resultados{
+    border-style: groove;
+    border-color: #000000;
+    border-radius: 7px;
+    padding-left: 8px;
+}
+
+.tarjeta_resumen {
+
+    height: 240px;
+    width: 600px;
+}
+
+.caja_respuesta {
+    background-color:#c9e4ff;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 10px;
+}
+.tarjeta_datos {
+
+    height: 240px;
+    width: 600px;
+    margin-top: 30px;
+}
+
+.tarjeta_estadisticas {
+   margin-top: 10px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.encabezado_estadisticas {
+    background-color:#4f7df2;
+    color: #ffffff;
+    margin-bottom: -21px;
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px ;
+}
+
+.encabezado_detallados {
+    background-color:#4f7df2;
+    color: #ffffff;
+    margin-bottom: -21px;
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px ;
+}
+
+
+
+.tarjeta_datos_detallados {
+
+    background-color:#ffffff;
+    margin-top:10px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: grid;
+}
+
+.contenedor_detallados {
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 2em;
+    align-items: start;
+    justify-items: stretch;
+    align-content: center;
+    justify-content: space-evenly;
+    background-color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.caja_respuesta_detallados {
+    background-color:#c9e4ff;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    width: 540px;
+}
+
+.caja_respuesta_detallados_1 {
+    background-color:#c9e4ff;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    width: 540px;
+    
+    margin-left: 30px;
+}
+.costo_total{
+    font-weight: bold;
+}
+
+.tarjeta_neplan {
+    background-color: #fff;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    
+    margin-top:10px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+
+}
+
+
+
+
+.imagen_neplan {
+
+    margin-top:30px;
+}
+
+
+.kw_texto{
+    font-size: 18px;
+}
+
+.nota{
+    margin-left: 40px;
+    font-size: 13.5px;
+    background-color: #c9e4ff;
+    padding: 3px;
+}
+
+.nota2{
+    margin-top: 50px;
+    padding-top: 0px;
+   
+    font-size: 16px;
+    background-color: #c9e4ff;;
+   margin-left: -180px;
+}
+
+.nota2 a:link {
+    color: rgb(68, 0, 255);
+}
+
+/*celulares y tablets*/
+
+
+@media(max-width: 768px) {
+
+    .tarjeta_principal {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        padding-bottom: 230px;
+    }
+
+    .tarjeta_estadisticas{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        padding-bottom: 150px;
+    }
+
+    .tarjeta_datos_detallados{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 150px;
+    }
+
+    .contenedor_detallados{
+        display: flex;
+        flex-direction: column;
+    align-items: center;
+    
+    }
+    .caja_respuesta_detallados_1{
+        margin-left: 0px;
+    }
+}
+
+@media(max-width: 500px) {
+    .tarjeta_principal {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: auto;
+        align-items: center;
+        padding-bottom: 260px;
+    }
+
+     .encabezado_imagen{
+
+     width: 90%;
+    }
+
+    .tarjeta_resultados {
+
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 50px;
+    }
+
+    .tarjeta_resumen {
+        width: 100%;
+    }
+
+    .encabezado{
+        width: 100%;
+    }
+
+    .tarjeta_datos{
+        padding-top: 50px;
+        width: 100%;
+    }
+    .tarjeta_estadisticas{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 150px;
+    }
+    .encabezado_estadisticas{
+        width: 80%;
+    }
+
+    .tarjeta_datos_detallados{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+
+    .caja_respuesta_detallados_1{
+        width: 80%;
+    }
+
+    .caja_respuesta_detallados{
+        width: 80%;
+    }
+    .contenedor_detallados{
+        display: flex;
+        flex-direction: column;
+    align-items: center;
+    
+    }
+    .caja_respuesta_detallados_1{
+        margin-left: 0px;
+    }
+
+
+    .tarjeta_neplan {
+
+        width: 90%;
+        display: flex;
+        padding-top: 0px;
+        padding-left: 30px;
+    }
+
+    .encabezado_neplan{
+        width: 90%;
+    }
+
+    .botones{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        padding-left: -20px;
+    }
+    .btn_calcular{
+        margin-top: 20px;
+    }
+
+    img {
+        padding-top: 20px;
+        width: 90%;
+         height: auto;
+    }
+
+    .nota2{
+   
+       margin-left: 0px;
+    }
+}
+
+

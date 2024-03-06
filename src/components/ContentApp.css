@@ -1,37 +1,54 @@
 
 
 .microred {
-    height: 500px;
-    font-size: 22px;
-    font-family: sans-serif;
+    height: 550px;
+    font-size: 26px;
+    font-family: 'Montserrat', sans-serif;
     padding: 40px;
     text-align: justify;
     
     text-align: justify;
     text-justify: inter-word;
     background-color:#c9e4ff;
-    gap: 5em;
+  
 }
 
 .microred_clase {
 
 padding: 50px;
+margin-top: 0px;
+}
+
+.microred_clase h1 {
+
+    
+    margin-top: 40px;
+    }
+
+.microred_clase p {
+
+    margin-top: -10px;
+    }
+
+.imagen_microrred{
+    padding-right: 70px;
 }
 
 .boton_center {
     /* padding: 30px; */
      text-align: justify;
-     text-justify: inter-word;
     display: flex;
     align-items: center;
     flex-direction: column;
+    /* padding-left: 35px; */
 }
 
 
 .btn{
-    width: 275px;
-   font-family: Roboto, sans-serif;
+ 
+   font-family:  'Montserrat', sans-serif;
    font-weight: 80;
+   font-weight: bold;
    font-size: 20px;
    text-align: center;
    vertical-align: middle;
@@ -48,7 +65,7 @@ padding: 50px;
    justify-content: center;
    align-items: center;
    cursor: pointer;
-   width: 43%;
+  
    }
    
    .btn:hover{
@@ -63,20 +80,25 @@ p.parrafo_microred {
   }
 
 
-
+.logomr360{
+    position: absolute;
+    margin-left: -420px;
+    padding-top: 200px;
+}
 
 .flex-container{
     padding-top: 40px;
     display: flex;
+    gap: 10px;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
 
 
-.como_usar {height: 500px;
-    font-size: 22px;
-    font-family: sans-serif;
+.como_usar {height: 550px;
+    font-size: 24px;
+    font-family:  'Montserrat', sans-serif;
     text-align: justify;
     text-justify: inter-word;
     padding: 40px;
@@ -84,14 +106,24 @@ p.parrafo_microred {
     background-color:#ffffff;
     display: grid;
     grid-template-columns: 50% 50%;
-    gap: 1em;
+    
     align-items: center;
     align-content: center;
 }
 
+.texto_como_usar{
+
+    padding-right: 40px;
+}
+
+.como_usar_imagen {
+
+    padding-left: 40px;
+}
+
 .que_obtiene {height: 500px;
-    font-size: 22px;
-    font-family: sans-serif;
+    font-size: 26px;
+    font-family: 'Montserrat', sans-serif;
     text-align: justify;
     text-justify: inter-word;
     padding: 40px;
@@ -107,8 +139,8 @@ p.parrafo_microred {
 .patrocinadores {
     height: 500px;
     font-size: 22px;
-    font-family: sans-serif;
-    padding: 40px;
+    font-family:  'Montserrat', sans-serif;
+    padding: 30px;
     margin-top: 15px;
     background-color:#ffffff;
     grid-template-columns: 100%;
@@ -117,7 +149,7 @@ p.parrafo_microred {
 
 .texto_patrocinadores{
     text-align: center;
-    height: 150px;
+    height: 30px;
 }
 
 h1{
@@ -125,15 +157,24 @@ h1{
 }
 .grid_patrocinadores {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 50% 50% ;
     align-items: center;
     align-items: baseline;
     justify-content: space-between;
     justify-content: center;
     justify-items: center;
+    gap: 20px;
 }
 
+.convocatoria{
+    width: 780px;
+    padding-left: 200px;
+}
 
+.ganadores{
+    width: 428px;
+    padding-left: 120px;
+}
 
 .redes{
 
@@ -156,20 +197,11 @@ h4{
     margin-top: 15px;
 }
 
-.footer { 
-    margin-top: 15px;
-    font-size: 17px;
-    font-family: sans-serif;
-    color: #2131c2;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    text-align: center;
-    justify-content:space-evenly;
-}
 
 
 .img_shadown {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 15px 15px 8px 0 rgb(0 0 0 / 20%);
+
 }
 
 
@@ -183,33 +215,18 @@ h4{
 
 
 
-
-  
-  /* Tablets y pantallas más pequeñas */
-
-  @media(max-width: 500px) {
-    .btn {
-        font-family: Roboto, sans-serif;
-   font-weight: 80;
-   font-size: 15px;
-   text-align: center;
-   vertical-align: middle;
-        font-size: 15px;
-    }
-}
-
-
-
-
-
-
-  @media(max-width: 1037px) {
-    .como_usar {
+@media(max-width: 768px) {
+    .grid_patrocinadores {
         display: flex;
         flex-direction: column;
+        align-items: center;
         height: auto;
     }
 }
+  
+  /* Tablets y pantallas más pequeñas */
+
+
 
 @media(max-width: 768px) {
     .como_usar {
@@ -220,14 +237,6 @@ h4{
     }
 }
 
-@media(max-width: 500px) {
-    .como_usar {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-      
-    }
-}
 
 @media(max-width: 1037px) {
     .que_obtiene {
@@ -247,15 +256,6 @@ h4{
     }
 }
 
-
-@media(max-width: 500px) {
-    .que_obtiene {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        height: auto;
-    }
-}
 
 /*microred*/
 
@@ -285,6 +285,13 @@ h4{
 @media(max-width: 768px) {
     .microred {
         height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .imagen_microrred{
+        margin-left: 70px;
+        margin-top: 50px;
     }
 }
 
@@ -293,17 +300,10 @@ h4{
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 890px;
     }
 }
 
-@media(max-width: 500px) {
-    .patrocinadores {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-    }
-}
 
 
 @media(max-width: 768px) {
@@ -315,33 +315,8 @@ h4{
     }
 }
 
-@media(max-width: 500px) {
-    .grid_patrocinadores {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-    }
-}
 
-@media(max-width: 768px) {
-    .footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-    }
-}
 
-@media(max-width: 500px) {
-    nav {
-      height: 100px;
-    }
-
-    .nav .flex {
-        flex-direction: column;
-      }
-}
 
 
 @media(max-width: 631px) {
@@ -359,4 +334,100 @@ h4{
       flex-direction: column;
     }
 
+    .texto_patrocinadores{
+        text-align: center;
+        height: 60px;
+    }
+
+    .grid_patrocinadores{
+        gap:30px;
+    }
+
+
+    .ganadores{
+        width: 500px;
+        padding-left: 10px;
+     }
+
+     .convocatoria{
+        width: 600px;
+         padding-left: 10px;
+    }
+
+}
+
+
+@media(max-width: 500px) {
+    nav {
+      height: 100px;
+    }
+
+    .nav .flex {
+        flex-direction: column;
+      }
+}
+
+
+
+@media(max-width: 500px) {
+    .grid_patrocinadores {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+
+    .ganadores{
+       width: 350px; 
+       padding-left: 10px;
+    }
+    .convocatoria{
+        width: 350px;
+        padding-left: 10px;
+     }
+}
+
+
+@media(max-width: 500px) {
+    .patrocinadores {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+}
+
+@media(max-width: 500px) {
+    .btn {
+        font-family:  'Montserrat', sans-serif;
+        
+        font-size: 16px;
+   
+   
+   font-size: 15px;
+   text-align: center;
+   vertical-align: middle;
+        font-size: 15px;
+    }
+}
+
+
+@media(max-width: 500px) {
+    .que_obtiene {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        height: auto;
+    }
+}
+
+
+@media(max-width: 500px) {
+    .como_usar {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+      
+    }
 }

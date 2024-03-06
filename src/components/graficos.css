@@ -1,0 +1,134 @@
+
+.tarjeta_graficos{
+    background-color: #c9e4ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.container_graficos {
+    width: 900px;
+    margin-top: 30px;
+    background-color: #fff;
+}
+
+.container_graficos2 {
+    padding-top: 50px;
+    width: 900px;
+    background-color: #fff;
+}
+
+.nota4{
+  background-color: white;
+  font-size: 13px;
+  width: 850px;
+  padding-left:50px;
+  padding-top: 5px;
+}
+
+
+.notaHora{
+  margin-top: -120px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.notaHora2{
+  text-align: center;
+  font-size: 13px;
+}
+.horaFalla{
+  padding-top: 32px;
+  padding-left: 156px;
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  text-align: center;
+  font-size: 10px;
+  color: red;
+}
+
+.horaFalla2{
+  padding-top: 72px;
+  padding-left: 280px;
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  text-align: center;
+  font-size: 10px;
+  color: red;
+}
+
+
+
+.encabezado_graficos {
+    background-color:#4f7df2;
+    color: #ffffff;
+    margin-bottom: -21px;
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px ;
+    width: 1262px;
+}
+
+
+@media(max-width: 768px) {
+    .tarjeta_graficos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width:auto;
+    }
+
+    .encabezado_graficos{
+        width: 562px;
+    }
+
+   .container_graficos{
+       width: 562px;
+   }
+
+   .container_graficos2{
+    width: 542px;
+  }
+
+  .encabezado_neplan{
+      width:562px;
+  }
+
+  .nota4{
+    width: 512px;
+  }
+}
+
+  @media(max-width: 500px) {
+    .container_cargando {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+      width:auto;
+  }
+
+  .encabezado_graficos{
+    width: 314px;
+}
+
+.container_graficos{
+   width: 314px;
+   height: auto;
+}
+
+.container_graficos2{
+width: 314px;
+}
+
+.encabezado_neplan{
+  width:314px;
+}
+
+.nota4{
+  width: 262px;
+}
+
+}

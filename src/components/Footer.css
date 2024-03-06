@@ -23,14 +23,20 @@ h4{
 
 
 .footer { 
-    margin-top: 15px;
+    
+    margin-top: auto;
     font-size: 17px;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #2131c2;
     display: grid;
     grid-template-columns: 33% 33% 33%;
     text-align: center;
     justify-content:space-evenly;
+ 
+    bottom: 0;
+    z-index: 5;
+    background-color:#e1dada;
+    width: 100%;
 }
 
 .flex-container-footer{
@@ -44,5 +50,11 @@ h4{
         flex-direction: column;
         align-items: center;
         height: auto;
+    }
+}
+
+@media(max-width: 500px) {
+    .logos_footer{
+      width: 50px;
     }
 }
